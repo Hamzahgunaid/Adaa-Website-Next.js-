@@ -1,0 +1,37 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "What We Do",
+    "work": "Our Work",
+    "knowledge": "Knowledge",
+    "contact": "Contact",
+    "careers": "Work With Us"
+  },
+  "footer": {
+    "description": "Adaa Consulting is a leading management consulting firm dedicated to transforming organizations through strategic solutions.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Information",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved",
+    "address": "123 Business Street, Riyadh, Saudi Arabia",
+    "phone": "+966 XX XXX XXXX",
+    "email": "info@adaaconsulting.com"
+  },
+  "home": {
+    "hero": {
+      "title": "Transform Your Organization",
+      "subtitle": "Strategic Consulting Solutions for Modern Businesses",
+      "cta": "Get Started"
+    }
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "submit": "Submit",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!"
+  }
+}
