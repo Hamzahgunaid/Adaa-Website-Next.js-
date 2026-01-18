@@ -399,5 +399,108 @@
       "button1": "Contact Us",
       "button2": "View Our Work"
     }
+  },
+  "work": {
+    "breadcrumb": {
+      "home": "Home",
+      "work": "Our Work"
+    },
+    "hero": {
+      "title": "Our Work",
+      "subtitle": "From monitoring humanitarian programs to designing digital solutions, our work spans Yemen's most challenging contexts. We deliver measurable results that strengthen institutions, improve service delivery, and build community resilience."
+    },
+    "stats": {
+      "title": "Impact at a Glance",
+      "stat1": {
+        "number": "7+",
+        "label": "Performance & Monitoring Systems",
+        "sublabel": "Supporting conflict-affected services"
+      },
+      "stat2": {
+        "number": "20+",
+        "label": "Knowledge Products & Tools",
+        "sublabel": "Enabling evidence-based decisions"
+      },
+      "stat3": {
+        "number": "5+",
+        "label": "Institutional Strategies & Manuals",
+        "sublabel": "Developed for local actors"
+      },
+      "stat4": {
+        "number": "2+",
+        "label": "Digital Innovations",
+        "sublabel": "Created across multiple sectors"
+      }
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "subtitle": "Selected Work",
+      "filters": {
+        "all": "All Projects",
+        "me": "M&E Systems",
+        "innovation": "Digital Innovation",
+        "capacity": "Capacity Building"
+      },
+      "learnMore": "Learn more about this project",
+      "list": {
+        "project1": {
+          "partner": "Yemen Family Care Association (YFCA)",
+          "title": "Third Party Monitoring & Evaluation",
+          "description": "Independent third-party evaluation services for humanitarian and development projects across WASH and Health sectors. Conducted comprehensive assessments to verify program delivery, measure outcomes, and provide evidence-based recommendations for program improvement—ensuring accountability and learning for implementing partners and donors.",
+          "tags": ["Third Party M&E", "WASH", "Health"]
+        },
+        "project2": {
+          "partner": "Local Water & Sanitation Corporation",
+          "title": "Financial Performance Analysis",
+          "description": "Comprehensive analysis of multi-year financial and operational data to diagnose performance challenges. Identified critical deterioration in collection efficiency and accumulated debt patterns, delivering a strategic framework for restructuring financial operations and improving field-level collection mechanisms using data-driven approaches.",
+          "tags": ["Performance Analysis", "WASH", "Public Utilities"]
+        },
+        "project3": {
+          "partner": "United Nations Development Programme (UNDP)",
+          "title": "Mine Action Information Management System",
+          "description": "Developed comprehensive data collection tools, geographic mapping systems, and performance tracking dashboards for mine action programming. Created high-quality visualization products including interactive maps showing contaminated areas and cleared locations, interactive dashboards, and infographics to support donor engagement and evidence-based prioritization.",
+          "tags": ["GIS Mapping", "Dashboards", "Mine Action"]
+        },
+        "project4": {
+          "partner": "Tamdeen Youth Foundation (TYF)",
+          "title": "IT Strategy & Digital Identity",
+          "description": "Developed a comprehensive digital transformation roadmap for a local non-profit organization, including strategic IT planning aligned with organizational objectives. Designed visual identity systems and digital presence strategy covering social media platforms and website development, enabling the organization to embed digital transformation into administrative operations and program delivery.",
+          "tags": ["Digital Strategy", "Branding", "Local NGO"]
+        },
+        "project5": {
+          "partner": "MUAFA+ & Afea4Community",
+          "title": "AI-Powered Health Awareness Platforms",
+          "description": "Developed innovative AI-driven digital platforms for health awareness and community engagement. MUAFA+ leverages artificial intelligence to deliver personalized health information and guidance, while Afea4Community enables scalable community health education through intelligent content delivery—bringing accessible health knowledge to underserved populations across Yemen.",
+          "tags": ["AI Innovation", "Health", "Digital Platform"]
+        },
+        "project6": {
+          "partner": "Global Nutrition Cluster & Yemen Nutrition Cluster",
+          "title": "Anticipatory Action & Nutrition Capacity Building",
+          "description": "Delivered multi-day capacity strengthening program on anticipatory action and nutrition for local and national actors. Developed contextualized training materials linking climate risk to nutrition outcomes, facilitated workshops with diverse stakeholders, and produced a national roadmap for integrating nutrition into anticipatory action frameworks with local ownership.",
+          "tags": ["Training", "Nutrition", "Climate Resilience"]
+        },
+        "project7": {
+          "partner": "Local NGO Partners (TYF, JODP, MAAKUM)",
+          "title": "Institutional Capacity Building & Compliance Systems",
+          "description": "Comprehensive institutional strengthening for local civil society organizations including capacity assessments, gap analysis, and development of core organizational systems. Delivered complete policy and manual packages covering governance, financial management, HR, procurement, M&E, safeguarding (PSEA), and program management—enabling partners to meet international donor compliance standards.",
+          "tags": ["Institutional Development", "Compliance", "Local CSOs"]
+        }
+      }
+    },
+    "map": {
+      "subtitle": "Our Reach",
+      "title": "Where We Work",
+      "description": "Our field networks extend across Yemen's governorates, including areas with severely constrained access. We maintain operational presence where it matters most—delivering results in hard-to-reach locations through local expertise and adaptive approaches.",
+      "headquarters": {
+        "name": "Headquarters",
+        "location": "Aden, Yemen",
+        "description": "Our main office coordinates operations across all governorates"
+      }
+    },
+    "cta": {
+      "title": "Interested in Our Work?",
+      "subtitle": "Partner with us to deliver evidence-based solutions tailored to Yemen's complex operational environment.",
+      "button": "Get in Touch"
+    }
   }
 }
