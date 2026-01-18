@@ -263,5 +263,136 @@
       "primary": "Partner With Us",
       "secondary": "Contact Us"
     }
+  },
+  "services": {
+    "breadcrumb": {
+      "home": "Home",
+      "services": "What We Do"
+    },
+    "hero": {
+      "title": "What We Do",
+      "subtitle": "Comprehensive consulting services tailored to Yemen's unique challenges and your organization's specific needs."
+    },
+    "intro": {
+      "title": "Our Services",
+      "subtitle": "Evidence-based solutions for sustainable impact",
+      "description": "We provide specialized consulting across four core areas, combining local expertise with international standards to deliver measurable results in complex environments."
+    },
+    "strategic": {
+      "title": "Strategic Advisory & Evidence-Based Design",
+      "description": "We help organizations design programs that are effective, locally owned, and sustainable through rapid contextual analysis and systematic stakeholder engagement.",
+      "features": {
+        "feature1": {
+          "title": "Contextual Analysis & Needs Assessment",
+          "desc": "Comprehensive field research and stakeholder mapping"
+        },
+        "feature2": {
+          "title": "Theory of Change Development",
+          "desc": "Logic models and results frameworks aligned with donor standards"
+        },
+        "feature3": {
+          "title": "Strategic Planning & Program Design",
+          "desc": "Evidence-based program architecture and implementation plans"
+        },
+        "feature4": {
+          "title": "Stakeholder Engagement & Consultation",
+          "desc": "Participatory processes ensuring local ownership"
+        }
+      }
+    },
+    "monitoring": {
+      "title": "Monitoring, Evaluation & Results Systems",
+      "description": "We improve learning, accountability, and performance through practical, context-sensitive methods and independent verification.",
+      "features": {
+        "feature1": {
+          "title": "M&E Framework Design",
+          "desc": "Results-based frameworks with SMART indicators"
+        },
+        "feature2": {
+          "title": "Impact Evaluation Studies",
+          "desc": "Rigorous impact assessments using mixed methods"
+        },
+        "feature3": {
+          "title": "Real-Time Monitoring Systems",
+          "desc": "Digital data collection and dashboards for decision-making"
+        },
+        "feature4": {
+          "title": "Data Quality Assessments",
+          "desc": "Independent verification and quality assurance protocols"
+        }
+      }
+    },
+    "innovation": {
+      "title": "Innovation, Technology & Digital Transformation",
+      "description": "We deploy responsible AI and practical innovation to enhance organizational effectiveness in low-bandwidth, resource-constrained environments.",
+      "features": {
+        "feature1": {
+          "title": "Digital Strategy Development",
+          "desc": "Technology roadmaps adapted to operational constraints"
+        },
+        "feature2": {
+          "title": "AI & Machine Learning Solutions",
+          "desc": "Responsible AI applications for data analysis and automation"
+        },
+        "feature3": {
+          "title": "Data Analytics & Visualization",
+          "desc": "Interactive dashboards and geospatial mapping"
+        },
+        "feature4": {
+          "title": "Technology Assessment & Integration",
+          "desc": "System evaluations and implementation support"
+        }
+      }
+    },
+    "capacity": {
+      "title": "Capacity Strengthening & Institutional Development",
+      "description": "We enhance organizational resilience and performance through people, processes, and systems, fostering sustainable institutional transformation.",
+      "features": {
+        "feature1": {
+          "title": "Organizational Assessments",
+          "desc": "Capacity diagnostics and institutional gap analysis"
+        },
+        "feature2": {
+          "title": "Capacity Building Programs",
+          "desc": "Training, coaching, and skills development initiatives"
+        },
+        "feature3": {
+          "title": "Process Optimization",
+          "desc": "Workflow redesign and operational efficiency improvements"
+        },
+        "feature4": {
+          "title": "Knowledge Management Systems",
+          "desc": "Documentation frameworks and institutional learning platforms"
+        }
+      }
+    },
+    "approach": {
+      "title": "Our Approach",
+      "subtitle": "How We Work",
+      "description": "Every engagement follows our proven methodology that ensures quality, relevance, and sustainable impact.",
+      "steps": {
+        "step1": {
+          "title": "Understand",
+          "desc": "Deep contextual analysis and stakeholder engagement"
+        },
+        "step2": {
+          "title": "Design",
+          "desc": "Evidence-based solutions co-created with partners"
+        },
+        "step3": {
+          "title": "Implement",
+          "desc": "Adaptive delivery with real-time monitoring"
+        },
+        "step4": {
+          "title": "Learn",
+          "desc": "Continuous improvement and knowledge transfer"
+        }
+      }
+    },
+    "cta": {
+      "title": "Let's Discuss Your Needs",
+      "subtitle": "Whether you need strategic guidance, evaluation expertise, or capacity development, we're here to help.",
+      "button": "Get in Touch"
+    }
   }
 }
