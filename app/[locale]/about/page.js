@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default async function AboutPage({ params }) {
   const { locale } = params;
@@ -172,16 +173,16 @@ export default async function AboutPage({ params }) {
 
                 <div className="space-y-6">
                   {['founded', 'focus', 'reach', 'team'].map((item, i) => (
-                    <div key={i} className="flex items-start gap-4 rtl:flex-row-reverse">
+                    <div key={i} className="flex items-start gap-4 rtl:flex-row-reverse rtl:gap-4">
                       <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: colors.secondaryTeal + '20' }}>
                         <span style={{ color: colors.secondaryTeal }} className="font-bold text-sm">
                           {String(i + 1).padStart(2, '0')}
                         </span>
                       </div>
-                      <div className="rtl:text-right">
-                        <span className="text-xs text-gray-500 uppercase tracking-wider">{t(`glance.${item}.label`)}</span>
+                      <div className="rtl:text-right flex-1">
+                        <div className="block text-xs text-gray-500 uppercase tracking-wider">{t(`glance.${item}.label`)}</div>
                         <p className="font-semibold" style={{ color: colors.primaryNavy }}>{t(`glance.${item}.value`)}</p>
-                        <span className="text-sm text-gray-500">{t(`glance.${item}.sublabel`)}</span>
+                        <div className="block text-sm text-gray-500">{t(`glance.${item}.sublabel`)}</div>
                       </div>
                     </div>
                   ))}
@@ -336,10 +337,26 @@ export default async function AboutPage({ params }) {
 
           <div className="rounded-xl p-8 text-center" style={{ backgroundColor: `${colors.primaryNavy}03`, border: `1px solid ${colors.primaryNavy}08` }}>
             <span className="text-sm text-gray-500 mb-6 block">{t('partners.trusted')}</span>
-            <div className="flex flex-wrap items-center justify-center gap-16">
-              {['UNDP', 'WFP', 'UNICEF', 'EU', 'GIZ', 'USAID'].map((logo, i) => (
-                <div key={i} className="text-xl font-bold tracking-wider opacity-40 hover:opacity-60 transition-opacity cursor-pointer" style={{ color: colors.primaryNavy }}>
-                  {logo}
+            <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-16">
+              {/* Partner Logos */}
+              {[
+                { name: 'UNDP', logo: '/images/partners/undp.svg', width: 140, height: 80 },
+                { name: 'TYF', logo: '/images/partners/tyf.svg', width: 160, height: 80 },
+                { name: 'BFD', logo: '/images/partners/bfd.svg', width: 120, height: 80 },
+                { name: 'YFCA', logo: '/images/partners/yfca.svg', width: 160, height: 80 },
+              ].map((partner, i) => (
+                <div
+                  key={i}
+                  className="relative grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                  style={{ width: partner.width, height: partner.height }}
+                >
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={partner.width}
+                    height={partner.height}
+                    className="object-contain"
+                  />
                 </div>
               ))}
             </div>
