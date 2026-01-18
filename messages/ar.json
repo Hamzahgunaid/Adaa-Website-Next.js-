@@ -9,14 +9,23 @@
     "careers": "اعمل معنا"
   },
   "footer": {
-    "description": "أداء للاستشارات هي شركة استشارات إدارية رائدة مكرسة لتحويل المنظمات من خلال الحلول الاستراتيجية.",
+    "tagline": "قيادة التأثير بالأدلة والابتكار",
     "quickLinks": "روابط سريعة",
-    "contactInfo": "معلومات الاتصال",
+    "services": "الخدمات",
+    "contactInfo": "تواصل معنا",
     "followUs": "تابعنا",
     "rights": "جميع الحقوق محفوظة",
-    "address": "١٢٣ شارع الأعمال، الرياض، المملكة العربية السعودية",
-    "phone": "+٩٦٦ XX XXX XXXX",
-    "email": "info@adaaconsulting.com"
+    "address": "عدن، الجمهورية اليمنية",
+    "email": "info@adaa-foundation.org",
+    "website": "www.adaa-foundation.org",
+    "linkAbout": "من نحن",
+    "linkServices": "ما نقدمه",
+    "linkWork": "أعمالنا",
+    "linkKnowledge": "منتجات المعرفة",
+    "serviceStrategic": "الاستشارات الاستراتيجية",
+    "serviceME": "أنظمة الرصد والتقييم",
+    "serviceInnovation": "الابتكار الرقمي",
+    "serviceCapacity": "بناء القدرات"
   },
   "home": {
     "hero": {

@@ -9,14 +9,23 @@
     "careers": "Work With Us"
   },
   "footer": {
-    "description": "Adaa Consulting is a leading management consulting firm dedicated to transforming organizations through strategic solutions.",
+    "tagline": "Driving Impact with Evidence and Innovation",
     "quickLinks": "Quick Links",
-    "contactInfo": "Contact Information",
+    "services": "Services",
+    "contactInfo": "Contact",
     "followUs": "Follow Us",
     "rights": "All rights reserved",
-    "address": "123 Business Street, Riyadh, Saudi Arabia",
-    "phone": "+966 XX XXX XXXX",
-    "email": "info@adaaconsulting.com"
+    "address": "Aden, Republic of Yemen",
+    "email": "info@adaa-foundation.org",
+    "website": "www.adaa-foundation.org",
+    "linkAbout": "About Us",
+    "linkServices": "What We Do",
+    "linkWork": "Our Work",
+    "linkKnowledge": "Knowledge Products",
+    "serviceStrategic": "Strategic Advisory",
+    "serviceME": "M&E Systems",
+    "serviceInnovation": "Digital Innovation",
+    "serviceCapacity": "Capacity Building"
   },
   "home": {
     "hero": {
