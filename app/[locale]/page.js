@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default async function HomePage({ params }) {
   const { locale } = params;
@@ -436,22 +437,34 @@ export default async function HomePage({ params }) {
       {/* ===== TRUSTED BY SECTION ===== */}
       <section className="py-16 border-y border-gray-200" style={{ backgroundColor: '#FAFBFC' }}>
         <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-8">
-            <h3 className="text-sm font-semibold text-gray-500 tracking-wider uppercase">
+          <div className="text-center mb-12">
+            <h3 className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-2">
               {t('trustedBy.title')}
             </h3>
-            <p className="text-xs text-gray-400 mt-1">
+            <p className="text-xs text-gray-400">
               {t('trustedBy.subtitle')}
             </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12 opacity-60">
-            {/* Partner logo placeholders */}
-            {['UNDP', 'UNICEF', 'WFP', 'UN OCHA', 'FAO'].map((partner, i) => (
+          <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-16">
+            {/* Partner Logos */}
+            {[
+              { name: 'UNDP', logo: '/images/partners/undp.png', width: 140, height: 80 },
+              { name: 'TYF', logo: '/images/partners/tyf.png', width: 160, height: 80 },
+              { name: 'BFD', logo: '/images/partners/bfd.png', width: 120, height: 80 },
+              { name: 'YFCA', logo: '/images/partners/yfca.png', width: 160, height: 80 },
+            ].map((partner, i) => (
               <div
                 key={i}
-                className="px-6 py-3 rounded-lg border border-gray-200 bg-white"
+                className="relative grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                style={{ width: partner.width, height: partner.height }}
               >
-                <span className="text-sm font-semibold text-gray-400">{partner}</span>
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={partner.width}
+                  height={partner.height}
+                  className="object-contain"
+                />
               </div>
             ))}
           </div>
