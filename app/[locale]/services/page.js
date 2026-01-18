@@ -47,10 +47,18 @@ export default async function ServicesPage({ params }) {
         <line x1="24" y1="32" x2="24" y2="44" stroke={color} strokeWidth="1.5" />
         <line x1="4" y1="24" x2="16" y2="24" stroke={color} strokeWidth="1.5" />
         <line x1="32" y1="24" x2="44" y2="24" stroke={color} strokeWidth="1.5" />
+        <line x1="16" y1="16" x2="8" y2="8" stroke={color} strokeWidth="1.5" />
+        <line x1="32" y1="16" x2="40" y2="8" stroke={color} strokeWidth="1.5" />
+        <line x1="16" y1="32" x2="8" y2="40" stroke={color} strokeWidth="1.5" />
+        <line x1="32" y1="32" x2="40" y2="40" stroke={color} strokeWidth="1.5" />
         <circle cx="24" cy="4" r="3" fill={color} />
         <circle cx="24" cy="44" r="3" fill={color} />
         <circle cx="4" cy="24" r="3" fill={color} />
         <circle cx="44" cy="24" r="3" fill={color} />
+        <circle cx="8" cy="8" r="2.5" fill={color} opacity="0.6" />
+        <circle cx="40" cy="8" r="2.5" fill={color} opacity="0.6" />
+        <circle cx="8" cy="40" r="2.5" fill={color} opacity="0.6" />
+        <circle cx="40" cy="40" r="2.5" fill={color} opacity="0.6" />
       </svg>
     ),
     CapacityBuilding: ({ color = colors.accentGreen, size = 48 }) => (
@@ -59,11 +67,7 @@ export default async function ServicesPage({ params }) {
         <rect x="12" y="22" width="24" height="10" rx="2" fill={color} opacity="0.6" />
         <rect x="16" y="12" width="16" height="10" rx="2" fill={color} opacity="0.8" />
         <rect x="20" y="4" width="8" height="8" rx="2" fill={color} />
-      </svg>
-    ),
-    Check: ({ size = 20, color = "currentColor" }) => (
-      <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20 6L9 17l-5-5" />
+        <path d="M24 44 L24 8 M18 14 L24 6 L30 14" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.3" />
       </svg>
     ),
     Arrow: ({ size = 20, color = "currentColor" }) => (
@@ -71,88 +75,78 @@ export default async function ServicesPage({ params }) {
         <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
       </svg>
     ),
+    Check: ({ size = 20, color = "currentColor" }) => (
+      <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 13l4 4L19 7" />
+      </svg>
+    ),
   };
 
   const services = [
     {
+      id: 'strategic-advisory',
       Icon: Icons.StrategicAdvisory,
       title: t('strategic.title'),
-      description: t('strategic.description'),
+      shortDesc: t('strategic.shortDesc'),
       color: colors.ctaOrange,
-      features: [
-        { title: t('strategic.features.feature1.title'), desc: t('strategic.features.feature1.desc') },
-        { title: t('strategic.features.feature2.title'), desc: t('strategic.features.feature2.desc') },
-        { title: t('strategic.features.feature3.title'), desc: t('strategic.features.feature3.desc') },
-        { title: t('strategic.features.feature4.title'), desc: t('strategic.features.feature4.desc') },
+      overview: t('strategic.overview'),
+      offerings: [
+        { title: t('strategic.offerings.offering1.title'), desc: t('strategic.offerings.offering1.desc') },
+        { title: t('strategic.offerings.offering2.title'), desc: t('strategic.offerings.offering2.desc') },
+        { title: t('strategic.offerings.offering3.title'), desc: t('strategic.offerings.offering3.desc') },
+        { title: t('strategic.offerings.offering4.title'), desc: t('strategic.offerings.offering4.desc') },
       ],
+      cta: t('strategic.cta'),
     },
     {
+      id: 'me-systems',
       Icon: Icons.MESystems,
       title: t('monitoring.title'),
-      description: t('monitoring.description'),
+      shortDesc: t('monitoring.shortDesc'),
       color: colors.secondaryTeal,
-      features: [
-        { title: t('monitoring.features.feature1.title'), desc: t('monitoring.features.feature1.desc') },
-        { title: t('monitoring.features.feature2.title'), desc: t('monitoring.features.feature2.desc') },
-        { title: t('monitoring.features.feature3.title'), desc: t('monitoring.features.feature3.desc') },
-        { title: t('monitoring.features.feature4.title'), desc: t('monitoring.features.feature4.desc') },
+      overview: t('monitoring.overview'),
+      offerings: [
+        { title: t('monitoring.offerings.offering1.title'), desc: t('monitoring.offerings.offering1.desc') },
+        { title: t('monitoring.offerings.offering2.title'), desc: t('monitoring.offerings.offering2.desc') },
+        { title: t('monitoring.offerings.offering3.title'), desc: t('monitoring.offerings.offering3.desc') },
+        { title: t('monitoring.offerings.offering4.title'), desc: t('monitoring.offerings.offering4.desc') },
       ],
+      cta: t('monitoring.cta'),
     },
     {
+      id: 'digital-innovation',
       Icon: Icons.DigitalInnovation,
       title: t('innovation.title'),
-      description: t('innovation.description'),
+      shortDesc: t('innovation.shortDesc'),
       color: colors.accentYellow,
-      features: [
-        { title: t('innovation.features.feature1.title'), desc: t('innovation.features.feature1.desc') },
-        { title: t('innovation.features.feature2.title'), desc: t('innovation.features.feature2.desc') },
-        { title: t('innovation.features.feature3.title'), desc: t('innovation.features.feature3.desc') },
-        { title: t('innovation.features.feature4.title'), desc: t('innovation.features.feature4.desc') },
+      overview: t('innovation.overview'),
+      offerings: [
+        { title: t('innovation.offerings.offering1.title'), desc: t('innovation.offerings.offering1.desc') },
+        { title: t('innovation.offerings.offering2.title'), desc: t('innovation.offerings.offering2.desc') },
+        { title: t('innovation.offerings.offering3.title'), desc: t('innovation.offerings.offering3.desc') },
+        { title: t('innovation.offerings.offering4.title'), desc: t('innovation.offerings.offering4.desc') },
       ],
+      cta: t('innovation.cta'),
     },
     {
+      id: 'capacity-building',
       Icon: Icons.CapacityBuilding,
       title: t('capacity.title'),
-      description: t('capacity.description'),
+      shortDesc: t('capacity.shortDesc'),
       color: colors.accentGreen,
-      features: [
-        { title: t('capacity.features.feature1.title'), desc: t('capacity.features.feature1.desc') },
-        { title: t('capacity.features.feature2.title'), desc: t('capacity.features.feature2.desc') },
-        { title: t('capacity.features.feature3.title'), desc: t('capacity.features.feature3.desc') },
-        { title: t('capacity.features.feature4.title'), desc: t('capacity.features.feature4.desc') },
+      overview: t('capacity.overview'),
+      offerings: [
+        { title: t('capacity.offerings.offering1.title'), desc: t('capacity.offerings.offering1.desc') },
+        { title: t('capacity.offerings.offering2.title'), desc: t('capacity.offerings.offering2.desc') },
+        { title: t('capacity.offerings.offering3.title'), desc: t('capacity.offerings.offering3.desc') },
+        { title: t('capacity.offerings.offering4.title'), desc: t('capacity.offerings.offering4.desc') },
       ],
-    },
-  ];
-
-  const approachSteps = [
-    {
-      number: '01',
-      title: t('approach.steps.step1.title'),
-      desc: t('approach.steps.step1.desc'),
-      color: colors.ctaOrange
-    },
-    {
-      number: '02',
-      title: t('approach.steps.step2.title'),
-      desc: t('approach.steps.step2.desc'),
-      color: colors.secondaryTeal
-    },
-    {
-      number: '03',
-      title: t('approach.steps.step3.title'),
-      desc: t('approach.steps.step3.desc'),
-      color: colors.accentYellow
-    },
-    {
-      number: '04',
-      title: t('approach.steps.step4.title'),
-      desc: t('approach.steps.step4.desc'),
-      color: colors.accentGreen
+      cta: t('capacity.cta'),
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ backgroundColor: '#FAFBFC' }}>
       {/* ===== PAGE HERO ===== */}
       <section className="relative overflow-hidden border-b border-gray-200" style={{ backgroundColor: colors.primaryNavy }}>
         <div className="absolute inset-0 opacity-10">
@@ -175,134 +169,232 @@ export default async function ServicesPage({ params }) {
           </div>
 
           <h1 className="text-5xl font-bold text-white mb-4">{t('hero.title')}</h1>
-          <p className="text-xl text-white/70 max-w-2xl">{t('hero.subtitle')}</p>
+          <p className="text-xl text-white/70 max-w-3xl">{t('hero.subtitle')}</p>
         </div>
       </section>
 
-      {/* ===== INTRO SECTION ===== */}
-      <section className="py-16 bg-white">
+      {/* ===== INTRODUCTION SECTION ===== */}
+      <section className="py-16 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: colors.secondaryTeal }}>
-              {t('intro.subtitle')}
-            </span>
-            <h2 className="text-3xl font-bold mt-2 mb-4" style={{ color: colors.primaryNavy }}>
-              {t('intro.title')}
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
+          <div className="max-w-3xl">
+            <p className="text-lg text-gray-700 leading-relaxed">
               {t('intro.description')}
             </p>
           </div>
         </div>
       </section>
 
-      {/* ===== SERVICES GRID ===== */}
-      <section className="py-16" style={{ backgroundColor: '#FAFBFC' }}>
+      {/* ===== SERVICES OVERVIEW - QUICK NAVIGATION ===== */}
+      <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="space-y-16">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {services.map((service, i) => (
+              <a
+                key={i}
+                href={`#${service.id}`}
+                className="group flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12">
-                  {/* Left: Service Header */}
-                  <div className="lg:col-span-5 p-10" style={{ backgroundColor: `${service.color}05` }}>
-                    <div
-                      className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6"
-                      style={{ backgroundColor: `${service.color}15` }}
-                    >
-                      <service.Icon color={service.color} size={48} />
-                    </div>
-
-                    <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primaryNavy }}>
-                      {service.title}
-                    </h3>
-
-                    <p className="text-gray-600 leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium" style={{ color: service.color }}>
-                      <span className="text-4xl font-bold opacity-10">0{index + 1}</span>
-                    </div>
-                  </div>
-
-                  {/* Right: Features Grid */}
-                  <div className="lg:col-span-7 p-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {service.features.map((feature, i) => (
-                        <div
-                          key={i}
-                          className="flex items-start gap-3 p-4 rounded-lg hover:bg-gray-50 transition-all"
-                        >
-                          <div
-                            className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                            style={{ backgroundColor: `${service.color}20` }}
-                          >
-                            <Icons.Check size={14} color={service.color} />
-                          </div>
-                          <div className="flex-1">
-                            <h4 className="font-semibold text-sm mb-1" style={{ color: colors.primaryNavy }}>
-                              {feature.title}
-                            </h4>
-                            <p className="text-xs text-gray-500 leading-relaxed">
-                              {feature.desc}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                <div
+                  className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: `${service.color}15` }}
+                >
+                  <service.Icon color={service.color} size={28} />
                 </div>
-              </div>
+                <div className="flex-1 min-w-0">
+                  <h3
+                    className="font-semibold text-sm truncate group-hover:text-opacity-80 transition-colors"
+                    style={{ color: colors.primaryNavy }}
+                  >
+                    {service.title.split('&')[0].trim()}
+                  </h3>
+                  <span
+                    className="text-xs flex items-center gap-1 mt-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{ color: service.color }}
+                  >
+                    {t('quickNav.jumpTo')} <Icons.Arrow size={12} />
+                  </span>
+                </div>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== OUR APPROACH ===== */}
-      <section className="py-20 bg-white border-y border-gray-100">
+      {/* ===== SERVICE DETAIL SECTIONS ===== */}
+      {services.map((service, index) => (
+        <section
+          key={service.id}
+          id={service.id}
+          className={`py-20`}
+          style={{ backgroundColor: index % 2 === 0 ? 'white' : '#FAFBFC' }}
+        >
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="grid grid-cols-12 gap-12 items-start">
+              {/* Left Column - Main Info */}
+              <div className="col-span-12 lg:col-span-5">
+                {/* Service Number & Icon */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div
+                    className="w-16 h-16 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: `${service.color}15` }}
+                  >
+                    <service.Icon color={service.color} size={40} />
+                  </div>
+                  <span
+                    className="text-5xl font-bold opacity-10"
+                    style={{ color: service.color }}
+                  >
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h2
+                  className="text-2xl font-bold mb-4"
+                  style={{ color: colors.primaryNavy }}
+                >
+                  {service.title}
+                </h2>
+
+                {/* Overview */}
+                <p className="text-gray-600 leading-relaxed mb-8">
+                  {service.overview}
+                </p>
+
+                {/* CTA */}
+                <Link
+                  href={`/${locale}/contact`}
+                  className="inline-flex items-center gap-2 font-semibold transition-all hover:gap-3"
+                  style={{ color: service.color }}
+                >
+                  {service.cta}
+                  <Icons.Arrow size={18} color={service.color} />
+                </Link>
+              </div>
+
+              {/* Right Column - Offerings */}
+              <div className="col-span-12 lg:col-span-7">
+                <div
+                  className="rounded-xl p-8"
+                  style={{ backgroundColor: `${service.color}05`, border: `1px solid ${service.color}15` }}
+                >
+                  <h3
+                    className="text-sm font-semibold tracking-wider uppercase mb-6"
+                    style={{ color: service.color }}
+                  >
+                    {t('offeringsTitle')}
+                  </h3>
+
+                  <div className="space-y-4">
+                    {service.offerings.map((offering, i) => (
+                      <div
+                        key={i}
+                        className="flex items-start gap-4 p-4 rounded-lg bg-white"
+                        style={{ border: `1px solid ${service.color}10` }}
+                      >
+                        <div
+                          className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                          style={{ backgroundColor: `${service.color}15` }}
+                        >
+                          <Icons.Check size={16} color={service.color} />
+                        </div>
+                        <div className="flex-1">
+                          <h4
+                            className="font-semibold mb-1"
+                            style={{ color: colors.primaryNavy }}
+                          >
+                            {offering.title}
+                          </h4>
+                          <p className="text-sm text-gray-600">
+                            {offering.desc}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* ===== CROSS-SERVICE VALUE PROPOSITION ===== */}
+      <section className="py-20" style={{ backgroundColor: colors.primaryNavy }}>
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-12">
-            <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: colors.secondaryTeal }}>
-              {t('approach.subtitle')}
+            <span
+              className="text-sm font-semibold tracking-wider uppercase"
+              style={{ color: colors.secondaryTeal }}
+            >
+              {t('integrated.subtitle')}
             </span>
-            <h2 className="text-3xl font-bold mt-2 mb-4" style={{ color: colors.primaryNavy }}>
-              {t('approach.title')}
+            <h2 className="text-3xl font-bold text-white mt-2">
+              {t('integrated.title')}
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t('approach.description')}
+            <p className="text-white/70 mt-4 max-w-2xl mx-auto">
+              {t('integrated.description')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {approachSteps.map((step, i) => (
+          {/* Visual representation of integrated services */}
+          <div className="relative">
+            {/* Connection lines */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div
-                key={i}
-                className="relative"
-              >
-                {/* Connector Line (hidden on last item) */}
-                {i < approachSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gray-200 -translate-x-1/2 rtl:translate-x-1/2" />
-                )}
+                className="w-64 h-64 rounded-full border-2 border-dashed opacity-20"
+                style={{ borderColor: colors.secondaryTeal }}
+              />
+            </div>
 
-                <div className="relative bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-all">
+            {/* Service nodes */}
+            <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {services.map((service, i) => (
+                <div
+                  key={i}
+                  className="text-center p-6 rounded-xl transition-all hover:scale-105"
+                  style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}
+                >
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 font-bold text-lg"
-                    style={{ backgroundColor: `${step.color}15`, color: step.color }}
+                    className="w-16 h-16 rounded-xl mx-auto mb-4 flex items-center justify-center"
+                    style={{ backgroundColor: `${service.color}20` }}
                   >
-                    {step.number}
+                    <service.Icon color={service.color} size={36} />
                   </div>
-
-                  <h3 className="font-semibold text-lg mb-2" style={{ color: colors.primaryNavy }}>
-                    {step.title}
+                  <h3 className="text-white font-semibold text-sm">
+                    {service.title.split('&')[0].trim()}
                   </h3>
-
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {step.desc}
+                  <p className="text-white/50 text-xs mt-2">
+                    {service.shortDesc.length > 60 ? service.shortDesc.substring(0, 60) + '...' : service.shortDesc}
                   </p>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Key differentiators */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            {[
+              {
+                title: t('integrated.key1.title'),
+                desc: t('integrated.key1.desc')
+              },
+              {
+                title: t('integrated.key2.title'),
+                desc: t('integrated.key2.desc')
+              },
+              {
+                title: t('integrated.key3.title'),
+                desc: t('integrated.key3.desc')
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="p-6 rounded-xl"
+                style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}
+              >
+                <h4 className="text-white font-semibold mb-2">{item.title}</h4>
+                <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -310,22 +402,33 @@ export default async function ServicesPage({ params }) {
       </section>
 
       {/* ===== CTA SECTION ===== */}
-      <section className="py-20" style={{ backgroundColor: colors.primaryNavy }}>
+      <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2
+            className="text-3xl font-bold mb-4"
+            style={{ color: colors.primaryNavy }}
+          >
             {t('cta.title')}
           </h2>
-          <p className="text-lg text-white/70 mb-8">
+          <p className="text-lg text-gray-600 mb-8">
             {t('cta.subtitle')}
           </p>
-          <Link
-            href={`/${locale}/contact`}
-            className="inline-flex items-center gap-2 rtl:gap-2 px-8 py-4 text-white font-semibold rounded-md transition-all hover:shadow-lg hover:scale-105"
-            style={{ backgroundColor: colors.ctaOrange }}
-          >
-            {t('cta.button')}
-            <Icons.Arrow size={18} color="white" />
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href={`/${locale}/contact`}
+              className="px-8 py-4 text-white font-semibold rounded-md transition-all hover:shadow-lg"
+              style={{ backgroundColor: colors.ctaOrange }}
+            >
+              {t('cta.button1')}
+            </Link>
+            <Link
+              href={`/${locale}/work`}
+              className="px-8 py-4 font-semibold rounded-md transition-all hover:bg-gray-100"
+              style={{ color: colors.primaryNavy, border: `1.5px solid ${colors.primaryNavy}25` }}
+            >
+              {t('cta.button2')}
+            </Link>
+          </div>
         </div>
       </section>
     </div>

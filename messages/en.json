@@ -271,128 +271,133 @@
     },
     "hero": {
       "title": "What We Do",
-      "subtitle": "Comprehensive consulting services tailored to Yemen's unique challenges and your organization's specific needs."
+      "subtitle": "Integrated solutions that empower humanitarian, recovery, and development actors to achieve sustainable impact, accountability, and institutional resilience."
     },
     "intro": {
-      "title": "Our Services",
-      "subtitle": "Evidence-based solutions for sustainable impact",
-      "description": "We provide specialized consulting across four core areas, combining local expertise with international standards to deliver measurable results in complex environments."
+      "description": "Adaa' Foundation provides integrated solutions that empower humanitarian, recovery, and development actors to achieve sustainable impact, accountability, and institutional resilience. Our approach blends evidence-based design, practical monitoring, innovation, and tailored capacity strengthening to help organizations respond effectively and perform at their best."
     },
+    "quickNav": {
+      "jumpTo": "Jump to section"
+    },
+    "offeringsTitle": "What We Offer",
     "strategic": {
       "title": "Strategic Advisory & Evidence-Based Design",
-      "description": "We help organizations design programs that are effective, locally owned, and sustainable through rapid contextual analysis and systematic stakeholder engagement.",
-      "features": {
-        "feature1": {
-          "title": "Contextual Analysis & Needs Assessment",
-          "desc": "Comprehensive field research and stakeholder mapping"
+      "shortDesc": "Program design combining rapid contextual analysis with systematic stakeholder engagement for locally-owned interventions.",
+      "overview": "We help organizations design programs that are effective, locally owned, and sustainable. Our approach combines rapid contextual analysis with systematic stakeholder engagement, ensuring interventions are evidence-based and locally owned from design through implementation.",
+      "offerings": {
+        "offering1": {
+          "title": "Contextual Analysis & Assessments",
+          "desc": "Understand root causes and priorities to guide program design"
         },
-        "feature2": {
-          "title": "Theory of Change Development",
-          "desc": "Logic models and results frameworks aligned with donor standards"
+        "offering2": {
+          "title": "Institutional & Stakeholder Mapping",
+          "desc": "Align interventions with local systems and capacities"
         },
-        "feature3": {
-          "title": "Strategic Planning & Program Design",
-          "desc": "Evidence-based program architecture and implementation plans"
+        "offering3": {
+          "title": "Donor Requirements & Due Diligence",
+          "desc": "Ensure funding readiness and compliance"
         },
-        "feature4": {
-          "title": "Stakeholder Engagement & Consultation",
-          "desc": "Participatory processes ensuring local ownership"
+        "offering4": {
+          "title": "Localization Strategies & Program Development",
+          "desc": "Strengthen ownership and program relevance"
         }
-      }
+      },
+      "cta": "Contact us to discuss how we can support your program design needs"
     },
     "monitoring": {
       "title": "Monitoring, Evaluation & Results Systems",
-      "description": "We improve learning, accountability, and performance through practical, context-sensitive methods and independent verification.",
-      "features": {
-        "feature1": {
-          "title": "M&E Framework Design",
-          "desc": "Results-based frameworks with SMART indicators"
+      "shortDesc": "Independent verification and real-time data collection through field networks across Yemen's governorates.",
+      "overview": "We improve learning, accountability, and performance through practical, context-sensitive methods. Leveraging field networks across Yemen's governorates, we deliver independent verification and real-time data collection in contexts where access is severely constrained.",
+      "offerings": {
+        "offering1": {
+          "title": "Independent Monitoring & Evaluations",
+          "desc": "Reliable verification through field-based and remote approaches"
         },
-        "feature2": {
-          "title": "Impact Evaluation Studies",
-          "desc": "Rigorous impact assessments using mixed methods"
+        "offering2": {
+          "title": "Data Collection & Synthesis",
+          "desc": "Flexible methods to ensure coverage, quality, and timeliness"
         },
-        "feature3": {
-          "title": "Real-Time Monitoring Systems",
-          "desc": "Digital data collection and dashboards for decision-making"
+        "offering3": {
+          "title": "Results & Adaptive Management",
+          "desc": "Turn insights into actionable program guidance"
         },
-        "feature4": {
-          "title": "Data Quality Assessments",
-          "desc": "Independent verification and quality assurance protocols"
+        "offering4": {
+          "title": "Outcome Harvesting & Systems-Based MEL",
+          "desc": "Capture change, resilience, and contribution pathways"
         }
-      }
+      },
+      "cta": "Learn how our M&E expertise can strengthen your programs"
     },
     "innovation": {
       "title": "Innovation, Technology & Digital Transformation",
-      "description": "We deploy responsible AI and practical innovation to enhance organizational effectiveness in low-bandwidth, resource-constrained environments.",
-      "features": {
-        "feature1": {
-          "title": "Digital Strategy Development",
-          "desc": "Technology roadmaps adapted to operational constraints"
+      "shortDesc": "Responsible AI and practical innovation for organizational effectiveness in resource-constrained environments.",
+      "overview": "We deploy responsible AI and machine learning to automate complex data synthesis, enabling real-time decision support in resource-constrained environments. Our solutions are designed for low-bandwidth contexts and limited technical capacity, applying practical, context-appropriate innovation to enhance organizational effectiveness.",
+      "offerings": {
+        "offering1": {
+          "title": "Geospatial & Climate Intelligence",
+          "desc": "Support planning, risk analysis, and prioritization across climate resilience, water resources, agriculture, and area-based interventions"
         },
-        "feature2": {
-          "title": "AI & Machine Learning Solutions",
-          "desc": "Responsible AI applications for data analysis and automation"
+        "offering2": {
+          "title": "Business Intelligence & Decision-Support Systems",
+          "desc": "Turn operational, financial, and performance data into actionable insights for strategic management"
         },
-        "feature3": {
-          "title": "Data Analytics & Visualization",
-          "desc": "Interactive dashboards and geospatial mapping"
+        "offering3": {
+          "title": "AI & Automation for Enhanced Efficiency",
+          "desc": "Apply responsible AI to streamline analysis, improve responsiveness, and reduce operational complexity"
         },
-        "feature4": {
-          "title": "Technology Assessment & Integration",
-          "desc": "System evaluations and implementation support"
+        "offering4": {
+          "title": "Digital Transformation Advisory",
+          "desc": "Embed data-driven practices and innovation into workflows, strengthening institutional capacity and adaptive management"
         }
-      }
+      },
+      "cta": "Explore how innovation can transform your operations"
     },
     "capacity": {
-      "title": "Capacity Strengthening & Institutional Development",
-      "description": "We enhance organizational resilience and performance through people, processes, and systems, fostering sustainable institutional transformation.",
-      "features": {
-        "feature1": {
-          "title": "Organizational Assessments",
-          "desc": "Capacity diagnostics and institutional gap analysis"
+      "title": "Capacity Strengthening, Governance & Institutional Development",
+      "shortDesc": "Building organizational resilience through people, processes, and systems for sustainable transformation.",
+      "overview": "We enhance organizational resilience and performance through people, processes, and systems, fostering sustainable institutional transformation. Our approach builds lasting capacity that enables organizations to navigate complexity and deliver results independently.",
+      "offerings": {
+        "offering1": {
+          "title": "Organizational Assessments & Change Management",
+          "desc": "Improve structures, processes, and effectiveness"
         },
-        "feature2": {
-          "title": "Capacity Building Programs",
-          "desc": "Training, coaching, and skills development initiatives"
+        "offering2": {
+          "title": "Capacity-Building & Coaching",
+          "desc": "Empower local actors and strengthen leadership"
         },
-        "feature3": {
-          "title": "Process Optimization",
-          "desc": "Workflow redesign and operational efficiency improvements"
+        "offering3": {
+          "title": "Governance & Service Delivery Systems",
+          "desc": "Promote transparency, accountability, and oversight"
         },
-        "feature4": {
-          "title": "Knowledge Management Systems",
-          "desc": "Documentation frameworks and institutional learning platforms"
+        "offering4": {
+          "title": "Leadership & Institutional Development",
+          "desc": "Foster learning, empowerment, and sustainable performance"
         }
-      }
+      },
+      "cta": "Partner with us to build lasting institutional capacity"
     },
-    "approach": {
-      "title": "Our Approach",
-      "subtitle": "How We Work",
-      "description": "Every engagement follows our proven methodology that ensures quality, relevance, and sustainable impact.",
-      "steps": {
-        "step1": {
-          "title": "Understand",
-          "desc": "Deep contextual analysis and stakeholder engagement"
-        },
-        "step2": {
-          "title": "Design",
-          "desc": "Evidence-based solutions co-created with partners"
-        },
-        "step3": {
-          "title": "Implement",
-          "desc": "Adaptive delivery with real-time monitoring"
-        },
-        "step4": {
-          "title": "Learn",
-          "desc": "Continuous improvement and knowledge transfer"
-        }
+    "integrated": {
+      "subtitle": "Our Approach",
+      "title": "Integrated Solutions for Complex Challenges",
+      "description": "Our services work together to deliver comprehensive support across the program lifecycle.",
+      "key1": {
+        "title": "From Strategy to Systems",
+        "desc": "We translate vision into practice, embedding learning and sustainability across all levels of intervention."
+      },
+      "key2": {
+        "title": "Context-Sensitive Methods",
+        "desc": "Our approaches are adapted to Yemen's complex operational environment and access constraints."
+      },
+      "key3": {
+        "title": "Sustainable Impact",
+        "desc": "We build lasting capacity that enables organizations to deliver results independently."
       }
     },
     "cta": {
-      "title": "Let's Discuss Your Needs",
-      "subtitle": "Whether you need strategic guidance, evaluation expertise, or capacity development, we're here to help.",
-      "button": "Get in Touch"
+      "title": "Ready to Get Started?",
+      "subtitle": "Contact us to discuss how our services can support your organization's goals in Yemen.",
+      "button1": "Contact Us",
+      "button2": "View Our Work"
     }
   }
 }
