@@ -128,5 +128,140 @@
     "loading": "Loading...",
     "error": "An error occurred",
     "success": "Success!"
+  },
+  "about": {
+    "breadcrumb": {
+      "home": "Home",
+      "about": "About Us"
+    },
+    "hero": {
+      "title": "Who We Are",
+      "subtitle": "An independent Yemeni foundation bridging strategy and implementation for sustainable impact in complex environments."
+    },
+    "intro": {
+      "heading": "Adaa' Foundation",
+      "paragraph1": "Adaa' Foundation is an independent Yemeni foundation established in 2018, specializing in institutional performance, evidence-based decision support, and capacity development for local actors operating in complex environments.",
+      "paragraph2": "We bridge the gap between strategy and implementation, ensuring that programs, institutions, and investments translate into verifiable results, enabling organizations to achieve measurable and sustainable impact.",
+      "paragraph3": "Our multidisciplinary team brings decades of expertise in strategic planning, monitoring and evaluation, governance reform, and digital innovation. This expertise is grounded in long-term operational experience within Yemen and the wider Middle East, and aligned with international standards and donor expectations.",
+      "paragraph4": "We are committed to fostering productivity, agility, and accountability through localized initiatives and partnerships that engage conflict-affected communities, civil society organizations, local NGOs, public institutions, the private sector, and donors."
+    },
+    "glance": {
+      "title": "At a Glance",
+      "founded": {
+        "label": "Founded",
+        "value": "2018",
+        "sublabel": "Aden, Yemen"
+      },
+      "focus": {
+        "label": "Focus",
+        "value": "Institutional Performance",
+        "sublabel": "Evidence-based solutions"
+      },
+      "reach": {
+        "label": "Reach",
+        "value": "Multiple Governorates",
+        "sublabel": "Including hard-to-reach areas"
+      },
+      "team": {
+        "label": "Team",
+        "value": "Yemeni-Led",
+        "sublabel": "Multidisciplinary expertise"
+      }
+    },
+    "vision": {
+      "title": "Our Vision",
+      "content": "A resilient Yemen where local institutions and actors lead sustainable transformation through innovative systems that perform effectively, adapt through evidence, and deliver tangible results."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": "To strengthen the performance, governance, and accountability of local institutions by delivering evidence-based analysis, adaptive systems, and practical solutions that support informed decision-making and locally driven, sustainable impact."
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "What Drives Us",
+      "local": {
+        "title": "Locally Rooted",
+        "description": "Yemeni-led with unmatched contextual intelligence and cultural fluency. Our leadership team provides the political sensitivity required for effective programming while maintaining the technical rigor expected by international partners."
+      },
+      "evidence": {
+        "title": "Evidence-Based",
+        "description": "Turning data into decisions that drive measurable impact. Our rigorous methodologies, real-time data collection, and independent verification ensure accountability and learning across all our engagements."
+      },
+      "innovative": {
+        "title": "Innovative",
+        "description": "Applying responsible technology to solve complex challenges. From AI-powered tools to geospatial analysis and digital transformation advisory, we bring practical innovation to humanitarian and development contexts."
+      },
+      "adaptive": {
+        "title": "Adaptive",
+        "description": "Delivering in the most complex, shifting environments. Operating successfully through conflict escalations, currency crises, and access constraints, we've maintained uninterrupted service delivery when others couldn't."
+      },
+      "impact": {
+        "title": "Impact-Oriented",
+        "description": "Focusing on sustainable, lasting change. Our systems-based approaches, capacity strengthening, and institutional resilience building ensure that our work creates enduring value for communities and organizations."
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "heading": "Leadership",
+      "subtitle": "Our leadership team combines deep local expertise with international experience, delivering the contextual intelligence and technical excellence that complex programming demands.",
+      "member": {
+        "name": "[Name]",
+        "bio": "Brief bio describing experience and expertise in relevant fields.",
+        "linkedin": "LinkedIn"
+      },
+      "roles": {
+        "ed": "Executive Director",
+        "do": "Director of Operations",
+        "me": "Head of M&E",
+        "hi": "Head of Innovation"
+      },
+      "photoPlaceholder": "Photo placeholder"
+    },
+    "partners": {
+      "title": "Our Partners",
+      "heading": "Who We Work With",
+      "subtitle": "We collaborate across the humanitarian-development-peace nexus with a diverse range of partners committed to Yemen's sustainable future.",
+      "trusted": "Trusted by Leading Organizations",
+      "categories": {
+        "communities": {
+          "label": "Local Communities",
+          "desc": "Conflict-affected populations"
+        },
+        "un": {
+          "label": "UN Agencies & INGOs",
+          "desc": "International organizations"
+        },
+        "donors": {
+          "label": "Donor Agencies",
+          "desc": "Funding consortia"
+        },
+        "government": {
+          "label": "Government",
+          "desc": "Institutions & local authorities"
+        },
+        "civil": {
+          "label": "Civil Society",
+          "desc": "National & grassroots NGOs"
+        },
+        "academic": {
+          "label": "Academic Institutions",
+          "desc": "Think tanks & research"
+        },
+        "private": {
+          "label": "Private Sector",
+          "desc": "Business entities"
+        },
+        "development": {
+          "label": "Development Partners",
+          "desc": "Strategic alliances"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Work Together?",
+      "subtitle": "Partner with us to achieve lasting impact in Yemen through evidence-based, locally-driven solutions.",
+      "primary": "Partner With Us",
+      "secondary": "Contact Us"
+    }
   }
 }
