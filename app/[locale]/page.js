@@ -1,9 +1,10 @@
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
-export default function HomePage({ params }) {
+export default async function HomePage({ params }) {
   const { locale } = params;
   setRequestLocale(locale);
+  const t = await getTranslations('home');
 
   const colors = {
     primaryNavy: '#1E3A5F',
@@ -70,57 +71,57 @@ export default function HomePage({ params }) {
   const services = [
     {
       Icon: Icons.StrategicAdvisory,
-      title: 'Strategic Advisory & Evidence-Based Design',
-      description: 'We help organizations design programs that are effective, locally owned, and sustainable through rapid contextual analysis and systematic stakeholder engagement.',
+      title: t('services.strategic.title'),
+      description: t('services.strategic.description'),
       color: colors.ctaOrange,
     },
     {
       Icon: Icons.MESystems,
-      title: 'Monitoring, Evaluation & Results Systems',
-      description: "We improve learning, accountability, and performance through practical, context-sensitive methods and independent verification across Yemen's governorates.",
+      title: t('services.monitoring.title'),
+      description: t('services.monitoring.description'),
       color: colors.secondaryTeal,
     },
     {
       Icon: Icons.DigitalInnovation,
-      title: 'Innovation, Technology & Digital Transformation',
-      description: 'We deploy responsible AI and practical innovation to enhance organizational effectiveness in low-bandwidth, resource-constrained environments.',
+      title: t('services.innovation.title'),
+      description: t('services.innovation.description'),
       color: colors.accentYellow,
     },
     {
       Icon: Icons.CapacityBuilding,
-      title: 'Capacity Strengthening & Institutional Development',
-      description: 'We enhance organizational resilience and performance through people, processes, and systems, fostering sustainable institutional transformation.',
+      title: t('services.capacity.title'),
+      description: t('services.capacity.description'),
       color: colors.accentGreen,
     },
   ];
 
   const values = [
-    { title: 'Locally Rooted', description: 'Yemeni-led with unmatched contextual intelligence', color: colors.ctaOrange },
-    { title: 'Evidence-Based', description: 'Data-driven decisions for measurable impact', color: colors.secondaryTeal },
-    { title: 'Innovative', description: 'Responsible technology for complex challenges', color: colors.accentYellow },
-    { title: 'Adaptive', description: 'Delivering in complex, shifting environments', color: colors.accentLightBlue },
-    { title: 'Impact-Oriented', description: 'Focused on sustainable, lasting change', color: colors.accentGreen },
+    { title: t('values.local.title'), description: t('values.local.description'), color: colors.ctaOrange },
+    { title: t('values.evidence.title'), description: t('values.evidence.description'), color: colors.secondaryTeal },
+    { title: t('values.innovative.title'), description: t('values.innovative.description'), color: colors.accentYellow },
+    { title: t('values.adaptive.title'), description: t('values.adaptive.description'), color: colors.accentLightBlue },
+    { title: t('values.impact.title'), description: t('values.impact.description'), color: colors.accentGreen },
   ];
 
   const insights = [
     {
-      tag: 'Research',
-      title: 'Strengthening Local Capacity in Humanitarian Response',
-      date: 'January 2026',
+      tag: t('insights.item1.tag'),
+      title: t('insights.item1.title'),
+      date: t('insights.item1.date'),
       image: 'research',
       color: colors.secondaryTeal,
     },
     {
-      tag: 'Innovation',
-      title: 'AI-Powered Health Platforms: Lessons from Yemen',
-      date: 'December 2025',
+      tag: t('insights.item2.tag'),
+      title: t('insights.item2.title'),
+      date: t('insights.item2.date'),
       image: 'innovation',
       color: colors.accentYellow,
     },
     {
-      tag: 'Policy Brief',
-      title: 'Integrating Climate Risk into Nutrition Programming',
-      date: 'November 2025',
+      tag: t('insights.item3.tag'),
+      title: t('insights.item3.title'),
+      date: t('insights.item3.date'),
       image: 'policy',
       color: colors.accentGreen,
     },
@@ -138,43 +139,39 @@ export default function HomePage({ params }) {
                 className="inline-block px-3 py-1 text-sm font-medium rounded-full mb-6"
                 style={{ backgroundColor: `${colors.secondaryTeal}15`, color: colors.secondaryTeal }}
               >
-                Yemeni-Led · Evidence-Based · Impact-Driven
+                {t('hero.tag')}
               </span>
 
               <h1
                 className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6"
                 style={{ color: colors.primaryNavy }}
               >
-                Turning Evidence into Action for Yemen's Future
+                {t('hero.title')}
               </h1>
 
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed" style={{ color: colors.secondaryTeal }}>
-                <em>Enabling Impact Through Evidence and Innovation</em>
-              </p>
-
               <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl">
-                Adaa' Foundation is an independent Yemeni foundation established in 2018, specializing in institutional performance, evidence-based decision support, and capacity development for local actors operating in complex environments.
+                {t('hero.subtitle')}
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center gap-4 rtl:gap-4">
                 <Link
                   href={`/${locale}/contact`}
-                  className="group flex items-center gap-2 px-6 py-3.5 text-white font-semibold rounded-md transition-all hover:shadow-lg"
+                  className="group flex items-center gap-2 rtl:gap-2 px-6 py-3.5 text-white font-semibold rounded-md transition-all hover:shadow-lg"
                   style={{ backgroundColor: colors.ctaOrange }}
                 >
-                  Partner With Us
+                  {t('hero.ctaPrimary')}
                   <Icons.Arrow size={18} color="white" />
                 </Link>
                 <Link
-                  href={`/${locale}/work`}
-                  className="flex items-center gap-2 px-6 py-3.5 font-semibold rounded-md transition-all hover:bg-gray-100"
+                  href={`/${locale}/services`}
+                  className="flex items-center gap-2 rtl:gap-2 px-6 py-3.5 font-semibold rounded-md transition-all hover:bg-gray-100"
                   style={{ color: colors.primaryNavy, border: `1.5px solid ${colors.primaryNavy}25` }}
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  See Our Impact
+                  {t('hero.ctaSecondary')}
                 </Link>
               </div>
             </div>
@@ -257,12 +254,12 @@ export default function HomePage({ params }) {
       {/* ===== STATS BAR ===== */}
       <section className="border-y border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200 rtl:divide-x-reverse">
             {[
-              { number: '7+', label: 'Performance & Monitoring Systems', color: colors.secondaryTeal },
-              { number: '20+', label: 'Knowledge Products & Tools', color: colors.ctaOrange },
-              { number: '5+', label: 'Institutional Strategies', color: colors.accentGreen },
-              { number: '2+', label: 'Digital Innovations', color: colors.accentYellow },
+              { number: t('stats.years'), label: t('stats.yearsLabel'), color: colors.secondaryTeal },
+              { number: t('stats.governorates'), label: t('stats.governoratesLabel'), color: colors.ctaOrange },
+              { number: t('stats.sectors'), label: t('stats.sectorsLabel'), color: colors.accentGreen },
+              { number: t('stats.studies'), label: t('stats.studiesLabel'), color: colors.accentYellow },
             ].map((stat, i) => (
               <div key={i} className="py-8 px-6 text-center">
                 <div className="text-4xl font-bold mb-2" style={{ color: stat.color }}>
@@ -280,10 +277,10 @@ export default function HomePage({ params }) {
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-12">
             <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: colors.secondaryTeal }}>
-              Our Services
+              {t('services.subtitle')}
             </span>
             <h2 className="text-3xl font-bold mt-2" style={{ color: colors.primaryNavy }}>
-              What We Do
+              {t('services.title')}
             </h2>
           </div>
 
@@ -324,10 +321,10 @@ export default function HomePage({ params }) {
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-12">
             <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: colors.secondaryTeal }}>
-              Our Values
+              {t('values.subtitle')}
             </span>
             <h2 className="text-3xl font-bold mt-2" style={{ color: colors.primaryNavy }}>
-              Why Adaa'
+              {t('values.title')}
             </h2>
           </div>
 
@@ -359,18 +356,18 @@ export default function HomePage({ params }) {
           <div className="flex flex-wrap items-end justify-between mb-12">
             <div>
               <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: colors.secondaryTeal }}>
-                Knowledge Hub
+                {t('insights.subtitle')}
               </span>
               <h2 className="text-3xl font-bold mt-2" style={{ color: colors.primaryNavy }}>
-                Latest Insights
+                {t('insights.title')}
               </h2>
             </div>
             <Link
               href={`/${locale}/knowledge`}
-              className="flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all mt-4 lg:mt-0"
+              className="flex items-center gap-2 rtl:gap-2 text-sm font-medium hover:gap-3 rtl:hover:gap-3 transition-all mt-4 lg:mt-0"
               style={{ color: colors.primaryNavy }}
             >
-              View All Insights
+              {t('insights.viewAll')}
               <Icons.Arrow size={16} />
             </Link>
           </div>
@@ -439,9 +436,14 @@ export default function HomePage({ params }) {
       {/* ===== TRUSTED BY SECTION ===== */}
       <section className="py-16 border-y border-gray-200" style={{ backgroundColor: '#FAFBFC' }}>
         <div className="max-w-7xl mx-auto px-8">
-          <h3 className="text-center text-sm font-semibold text-gray-500 mb-8 tracking-wider uppercase">
-            Trusted By Leading Organizations
-          </h3>
+          <div className="text-center mb-8">
+            <h3 className="text-sm font-semibold text-gray-500 tracking-wider uppercase">
+              {t('trustedBy.title')}
+            </h3>
+            <p className="text-xs text-gray-400 mt-1">
+              {t('trustedBy.subtitle')}
+            </p>
+          </div>
           <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12 opacity-60">
             {/* Partner logo placeholders */}
             {['UNDP', 'UNICEF', 'WFP', 'UN OCHA', 'FAO'].map((partner, i) => (
@@ -460,17 +462,17 @@ export default function HomePage({ params }) {
       <section className="py-20" style={{ backgroundColor: colors.primaryNavy }}>
         <div className="max-w-3xl mx-auto px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to discuss your project?
+            {t('cta.title')}
           </h2>
           <p className="text-white/70 text-lg mb-8">
-            Partner with us to achieve lasting impact in Yemen
+            {t('cta.subtitle')}
           </p>
           <Link
             href={`/${locale}/contact`}
-            className="inline-flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-md transition-all hover:shadow-lg hover:scale-105"
+            className="inline-flex items-center gap-2 rtl:gap-2 px-8 py-4 text-white font-semibold rounded-md transition-all hover:shadow-lg hover:scale-105"
             style={{ backgroundColor: colors.ctaOrange }}
           >
-            Contact Us
+            {t('cta.button')}
             <Icons.Arrow size={18} color="white" />
           </Link>
         </div>
