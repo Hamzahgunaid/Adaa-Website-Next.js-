@@ -446,12 +446,12 @@ export default async function HomePage({ params }) {
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-16">
-            {/* Partner Logos - TODO: Replace placeholder SVGs with actual partner logos */}
+            {/* Partner Logos */}
             {[
-              { name: 'UNDP', logo: '/images/partners/undp.svg', width: 140, height: 80 },
-              { name: 'TYF', logo: '/images/partners/tyf.svg', width: 160, height: 80 },
-              { name: 'BFD', logo: '/images/partners/bfd.svg', width: 120, height: 80 },
-              { name: 'YFCA', logo: '/images/partners/yfca.svg', width: 160, height: 80 },
+              { name: 'UNDP', logo: '/images/partners/undp.png', width: 140, height: 80 },
+              { name: 'TYF', logo: '/images/partners/tyf.png', width: 160, height: 80 },
+              { name: 'BFD', logo: '/images/partners/bfd.png', width: 120, height: 80 },
+              { name: 'YFCA', logo: '/images/partners/yfca.png', width: 160, height: 80 },
             ].map((partner, i) => (
               <div
                 key={i}
