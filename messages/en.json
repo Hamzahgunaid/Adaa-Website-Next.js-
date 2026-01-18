@@ -20,9 +20,95 @@
   },
   "home": {
     "hero": {
-      "title": "Transform Your Organization",
-      "subtitle": "Strategic Consulting Solutions for Modern Businesses",
-      "cta": "Get Started"
+      "tag": "Yemeni-Led · Evidence-Based · Impact-Driven",
+      "title": "Turning Evidence into Action for Yemen's Future",
+      "subtitle": "Adaa Consulting provides strategic advisory, monitoring & evaluation, and capacity strengthening services to humanitarian, development, and private sector actors operating in Yemen and the region.",
+      "ctaPrimary": "Get in Touch",
+      "ctaSecondary": "Our Services"
+    },
+    "stats": {
+      "years": "7+",
+      "yearsLabel": "Years in Yemen",
+      "governorates": "20+",
+      "governoratesLabel": "Governorates Covered",
+      "sectors": "5+",
+      "sectorsLabel": "Sectors Served",
+      "studies": "2+",
+      "studiesLabel": "Million Data Points"
+    },
+    "services": {
+      "title": "What We Do",
+      "subtitle": "Comprehensive solutions tailored to Yemen's unique challenges",
+      "strategic": {
+        "title": "Strategic Advisory & Evidence-Based Design",
+        "description": "We help organizations design programs that are effective, locally owned, and sustainable through rapid contextual analysis and systematic stakeholder engagement."
+      },
+      "monitoring": {
+        "title": "Monitoring, Evaluation & Results Systems",
+        "description": "We improve learning, accountability, and performance through practical, context-sensitive methods and independent verification across Yemen's governorates."
+      },
+      "innovation": {
+        "title": "Innovation, Technology & Digital Transformation",
+        "description": "We deploy responsible AI and practical innovation to enhance organizational effectiveness in low-bandwidth, resource-constrained environments."
+      },
+      "capacity": {
+        "title": "Capacity Strengthening & Institutional Development",
+        "description": "We enhance organizational resilience and performance through people, processes, and systems, fostering sustainable institutional transformation."
+      },
+      "cta": "View All Services"
+    },
+    "values": {
+      "title": "Why Adaa",
+      "subtitle": "What sets us apart",
+      "local": {
+        "title": "Locally Rooted",
+        "description": "Yemeni-led with unmatched contextual intelligence"
+      },
+      "evidence": {
+        "title": "Evidence-Based",
+        "description": "Data-driven decisions for measurable impact"
+      },
+      "innovative": {
+        "title": "Innovative",
+        "description": "Responsible technology for complex challenges"
+      },
+      "adaptive": {
+        "title": "Adaptive",
+        "description": "Delivering in complex, shifting environments"
+      },
+      "impact": {
+        "title": "Impact-Oriented",
+        "description": "Focused on sustainable, lasting change"
+      }
+    },
+    "insights": {
+      "title": "Latest Insights",
+      "subtitle": "Research, innovation, and policy analysis from the field",
+      "item1": {
+        "tag": "Research",
+        "title": "Strengthening Local Capacity in Humanitarian Response",
+        "date": "January 2026"
+      },
+      "item2": {
+        "tag": "Innovation",
+        "title": "AI-Powered Health Platforms: Lessons from Yemen",
+        "date": "December 2025"
+      },
+      "item3": {
+        "tag": "Policy Brief",
+        "title": "Integrating Climate Risk into Nutrition Programming",
+        "date": "November 2025"
+      },
+      "viewAll": "Explore All Knowledge"
+    },
+    "trustedBy": {
+      "title": "Trusted By",
+      "subtitle": "Leading organizations working across Yemen and the region"
+    },
+    "cta": {
+      "title": "Ready to Drive Impact Together?",
+      "subtitle": "Let's discuss how Adaa can support your mission in Yemen.",
+      "button": "Start a Conversation"
     }
   },
   "common": {
