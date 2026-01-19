@@ -207,6 +207,173 @@
       }
     }
   },
+  "knowledge": {
+    "hero": {
+      "breadcrumb": "Home",
+      "title": "Knowledge Products",
+      "subtitle": "Access our latest publications, insights, and thought leadership on humanitarian response, development programming, and innovation in complex contexts.",
+      "searchPlaceholder": "Search publications, insights, and news..."
+    },
+    "tabs": {
+      "news": "Media / News",
+      "publications": "Publications & Reports",
+      "insights": "Blog / Insights"
+    },
+    "publications": {
+      "title": "Publications & Reports",
+      "featured": "Featured",
+      "allPublications": "All Publications",
+      "downloadPDF": "Download PDF",
+      "loadMore": "Load More Publications",
+      "filters": {
+        "all": "All Types",
+        "report": "Reports",
+        "brief": "Policy Briefs",
+        "guide": "Technical Guides",
+        "caseStudy": "Case Studies"
+      },
+      "items": {
+        "pub1": {
+          "title": "Institutional Performance Assessment Framework for Yemen's Water Utilities",
+          "type": "Assessment Report",
+          "date": "December 2025",
+          "description": "Comprehensive framework for evaluating operational efficiency, financial sustainability, and service delivery quality in conflict-affected utility systems.",
+          "tags": ["WASH", "Performance Management", "Public Utilities"],
+          "featured": true
+        },
+        "pub2": {
+          "title": "Anticipatory Action & Nutrition: A Roadmap for Yemen",
+          "type": "Policy Brief",
+          "date": "November 2025",
+          "description": "National roadmap for integrating nutrition considerations into anticipatory action frameworks, developed in collaboration with the Global Nutrition Cluster.",
+          "tags": ["Nutrition", "Climate Resilience", "Policy"],
+          "featured": true
+        },
+        "pub3": {
+          "title": "Digital Transformation in Humanitarian Response: Lessons from Yemen",
+          "type": "Working Paper",
+          "date": "October 2025",
+          "description": "Analysis of practical approaches to implementing digital solutions in low-bandwidth, resource-constrained humanitarian contexts.",
+          "tags": ["Digital Innovation", "Humanitarian", "Technology"],
+          "featured": false
+        },
+        "pub4": {
+          "title": "Third-Party Monitoring Best Practices in Complex Environments",
+          "type": "Technical Guide",
+          "date": "September 2025",
+          "description": "Practical guidance for implementing independent monitoring and verification in contexts with severe access constraints.",
+          "tags": ["M&E", "Third-Party Monitoring", "Methodology"],
+          "featured": false
+        },
+        "pub5": {
+          "title": "Localization in Practice: Strengthening Local CSO Capacity",
+          "type": "Case Study",
+          "date": "August 2025",
+          "description": "Documentation of institutional strengthening approaches for local civil society organizations, including compliance systems and governance frameworks.",
+          "tags": ["Localization", "Capacity Building", "CSOs"],
+          "featured": false
+        }
+      }
+    },
+    "insights": {
+      "title": "Blog / Insights",
+      "featuredArticle": "Featured Article",
+      "readFullArticle": "Read Full Article",
+      "readMore": "Read More",
+      "categories": {
+        "all": "All",
+        "thought": "Thought Leadership",
+        "innovation": "Innovation",
+        "technical": "Technical Insights",
+        "caseStudy": "Case Study"
+      },
+      "newsletter": {
+        "title": "Stay Updated",
+        "subtitle": "Subscribe to receive our latest insights, publications, and updates on humanitarian response and development in Yemen.",
+        "placeholder": "Enter your email",
+        "subscribe": "Subscribe"
+      },
+      "items": {
+        "insight1": {
+          "title": "The Triangle of Transformation: Culture, Process, and Business Intelligence",
+          "author": "Adaa Foundation Team",
+          "date": "January 2026",
+          "excerpt": "How understanding the interconnection between organizational culture, operational processes, and data-driven intelligence creates sustainable institutional change.",
+          "category": "Thought Leadership",
+          "readTime": "8 min read"
+        },
+        "insight2": {
+          "title": "AI in Humanitarian Contexts: Responsible Innovation for Yemen",
+          "author": "Adaa Foundation Team",
+          "date": "December 2025",
+          "excerpt": "Exploring practical applications of artificial intelligence in resource-constrained humanitarian settings while maintaining ethical standards.",
+          "category": "Innovation",
+          "readTime": "6 min read"
+        },
+        "insight3": {
+          "title": "Building Resilient M&E Systems in Conflict-Affected Areas",
+          "author": "Adaa Foundation Team",
+          "date": "November 2025",
+          "excerpt": "Lessons learned from designing and implementing monitoring and evaluation systems that adapt to volatile operational environments.",
+          "category": "Technical Insights",
+          "readTime": "10 min read"
+        },
+        "insight4": {
+          "title": "Data-Driven Decision Making for Water Utility Management",
+          "author": "Adaa Foundation Team",
+          "date": "October 2025",
+          "excerpt": "How systematic analysis of operational data revealed practical solutions for improving service delivery in Yemen's water sector.",
+          "category": "Case Study",
+          "readTime": "7 min read"
+        }
+      }
+    },
+    "news": {
+      "title": "Media / News",
+      "categories": {
+        "all": "All",
+        "press": "Press Releases",
+        "announcements": "Announcements",
+        "updates": "Project Updates"
+      },
+      "archive": {
+        "title": "Looking for older news?",
+        "subtitle": "Browse our complete archive of press releases, media coverage, and organizational updates.",
+        "button": "View News Archive"
+      },
+      "mediaContact": {
+        "title": "Media Inquiries",
+        "description": "For press inquiries, interview requests, or media partnership opportunities, please contact our communications team.",
+        "email": "info@adaa-foundation.org"
+      },
+      "items": {
+        "news1": {
+          "title": "Adaa Foundation Partners with Global Nutrition Cluster on Anticipatory Action Training",
+          "date": "November 2025",
+          "type": "Press Release",
+          "excerpt": "Multi-day capacity strengthening program delivered to local and national actors on integrating nutrition into anticipatory action frameworks."
+        },
+        "news2": {
+          "title": "New AI-Powered Health Awareness Platforms Launched",
+          "date": "October 2025",
+          "type": "Announcement",
+          "excerpt": "MUAFA+ and Afea4Community platforms now available, bringing accessible health knowledge to underserved populations across Yemen."
+        },
+        "news3": {
+          "title": "Adaa Foundation Completes Mine Action Information Management System for UNDP",
+          "date": "September 2025",
+          "type": "Project Update",
+          "excerpt": "Comprehensive data collection tools, geographic mapping systems, and performance tracking dashboards delivered for mine action programming."
+        }
+      }
+    },
+    "cta": {
+      "title": "Can't find what you're looking for?",
+      "subtitle": "Our team is available to discuss specific research needs, custom analysis, or potential collaboration on knowledge products.",
+      "contactTeam": "Contact Our Team",
+      "requestResearch": "Request Custom Research"
+    }
+  },
   "common": {
     "readMore": "Read More",
     "learnMore": "Learn More",
