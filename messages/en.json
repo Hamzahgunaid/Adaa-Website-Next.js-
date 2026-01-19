@@ -374,6 +374,203 @@
       "requestResearch": "Request Custom Research"
     }
   },
+  "workWithUs": {
+    "hero": {
+      "breadcrumb": "Home",
+      "title": "Work With Us",
+      "subtitle": "Join our mission to strengthen institutions and drive sustainable impact in Yemen through partnership, employment, or consultancy."
+    },
+    "tabs": {
+      "partner": "Partner With Us",
+      "careers": "Careers",
+      "consultancy": "Consultancy Roster"
+    },
+    "partner": {
+      "title": "Partner With Us",
+      "subtitle": "We are your locally rooted partner for monitoring, evaluation, strategic advisory, and digital innovation in Yemen — delivering the contextual intelligence and technical rigor needed to achieve lasting change.",
+      "whyPartner": "Why Partner With Adaa'",
+      "benefits": {
+        "benefit1": {
+          "title": "Locally Rooted, Globally Aligned",
+          "description": "Yemeni-led with international standards. Our leadership team provides the political sensitivity and contextual intelligence required for effective programming while maintaining the technical rigor expected by international partners."
+        },
+        "benefit2": {
+          "title": "Multidisciplinary Expertise",
+          "description": "Comprehensive solutions to complex challenges. Our team integrates expertise in humanitarian operations, policy analysis, digital systems, AI innovation, governance reform, and economic development."
+        },
+        "benefit3": {
+          "title": "Independent & Trusted",
+          "description": "Reliable partner for verification and due diligence. We are trusted by global agencies for impartial, high-quality assessments and strategic guidance."
+        },
+        "benefit4": {
+          "title": "From Strategy to Scale",
+          "description": "Translating vision into lasting practice. We embed learning and sustainability across all levels of intervention through systematic approaches that ensure lasting institutional change."
+        },
+        "benefit5": {
+          "title": "Adaptive & Agile",
+          "description": "Flexible support in complex environments. Operating successfully through conflict escalations, currency crises, and access constraints, we've maintained uninterrupted service delivery when others couldn't."
+        }
+      },
+      "partnershipOpportunities": "Partnership Opportunities",
+      "types": {
+        "implementation": {
+          "title": "Implementation Partners",
+          "description": "Collaborate on program delivery, capacity building, and institutional development initiatives."
+        },
+        "research": {
+          "title": "Research & Knowledge",
+          "description": "Joint research, knowledge products, and evidence generation for humanitarian and development sectors."
+        },
+        "donors": {
+          "title": "Donors & Funding",
+          "description": "Third-party monitoring, due diligence, and independent verification services for funding organizations."
+        }
+      },
+      "cta": {
+        "title": "Ready to Partner?",
+        "subtitle": "Get in touch to discuss how Adaa' Foundation can support your programs and objectives in Yemen.",
+        "button": "Get in Touch"
+      }
+    },
+    "careers": {
+      "title": "Join Our Team",
+      "subtitle": "Join a team of Yemeni professionals working at the intersection of humanitarian action, innovation, and institutional development. At Adaa', you'll contribute to meaningful change while growing your expertise alongside local and international partners.",
+      "whyWorkTitle": "Why Work at Adaa'",
+      "reasons": {
+        "reason1": {
+          "title": "Meaningful Impact",
+          "description": "Work on projects that directly improve lives in Yemen"
+        },
+        "reason2": {
+          "title": "Professional Growth",
+          "description": "Develop expertise with local and international exposure"
+        },
+        "reason3": {
+          "title": "Innovation Focus",
+          "description": "Apply cutting-edge tools and methodologies"
+        },
+        "reason4": {
+          "title": "Collaborative Culture",
+          "description": "Join a supportive, multidisciplinary team"
+        }
+      },
+      "currentOpenings": "Current Openings",
+      "positionsAvailable": "positions available",
+      "viewRequirements": "View Requirements",
+      "showLess": "Show Less",
+      "applyNow": "Apply Now",
+      "requirements": "Requirements",
+      "jobs": {
+        "job1": {
+          "title": "M&E Specialist",
+          "type": "Full-time",
+          "location": "Aden, Yemen",
+          "department": "Monitoring & Evaluation",
+          "posted": "January 2026",
+          "description": "Lead monitoring and evaluation activities for humanitarian and development programs across multiple governorates.",
+          "requirements": [
+            "5+ years experience in M&E for humanitarian/development programs",
+            "Strong quantitative and qualitative research skills",
+            "Fluency in Arabic and English",
+            "Experience working in Yemen or similar contexts"
+          ]
+        },
+        "job2": {
+          "title": "Data Analyst",
+          "type": "Full-time",
+          "location": "Aden, Yemen",
+          "department": "Innovation & Technology",
+          "posted": "January 2026",
+          "description": "Support data collection, analysis, and visualization for institutional performance and program monitoring.",
+          "requirements": [
+            "3+ years experience in data analysis",
+            "Proficiency in Excel, Power BI, or similar tools",
+            "Experience with GIS software preferred",
+            "Strong attention to detail and analytical thinking"
+          ]
+        },
+        "job3": {
+          "title": "Capacity Building Coordinator",
+          "type": "Full-time",
+          "location": "Aden, Yemen",
+          "department": "Institutional Development",
+          "posted": "December 2025",
+          "description": "Design and deliver capacity strengthening programs for local civil society organizations and government partners.",
+          "requirements": [
+            "4+ years experience in capacity building or training",
+            "Experience developing organizational policies and manuals",
+            "Strong facilitation and communication skills",
+            "Knowledge of donor compliance requirements"
+          ]
+        }
+      },
+      "noPosition": {
+        "title": "Don't see a suitable position?",
+        "description": "We're always interested in hearing from talented professionals. Send us your CV and we'll keep you in mind for future opportunities.",
+        "button": "Submit General Application"
+      }
+    },
+    "consultancy": {
+      "title": "Consultancy Roster",
+      "subtitle": "We maintain a roster of qualified consultants for specialized assignments across our service areas. Join our network to be considered for upcoming opportunities.",
+      "areasTitle": "Areas of Expertise We Seek",
+      "areas": {
+        "me": {
+          "title": "Monitoring & Evaluation",
+          "items": ["Third-party monitoring", "Program evaluations", "Data collection", "Outcome harvesting"]
+        },
+        "strategic": {
+          "title": "Strategic Advisory",
+          "items": ["Contextual analysis", "Stakeholder mapping", "Program design", "Localization strategies"]
+        },
+        "digital": {
+          "title": "Digital Innovation",
+          "items": ["GIS & mapping", "Dashboard development", "AI applications", "Digital transformation"]
+        },
+        "institutional": {
+          "title": "Institutional Development",
+          "items": ["Organizational assessments", "Policy development", "Governance systems", "Change management"]
+        }
+      },
+      "benefitsTitle": "Benefits of Joining Our Roster",
+      "benefits": {
+        "benefit1": {
+          "title": "Diverse Assignments",
+          "description": "Access to varied projects across humanitarian, development, and institutional sectors"
+        },
+        "benefit2": {
+          "title": "Network Expansion",
+          "description": "Connect with international organizations, UN agencies, and donor communities"
+        },
+        "benefit3": {
+          "title": "Professional Development",
+          "description": "Gain experience in innovative methodologies and cutting-edge approaches"
+        }
+      },
+      "applicationForm": {
+        "title": "Apply to Join Our Roster",
+        "subtitle": "Complete the form below to be considered for consultancy opportunities.",
+        "fullName": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "expertise": "Area of Expertise",
+        "expertisePlaceholder": "Select your primary expertise",
+        "bio": "Brief Bio / Summary of Experience",
+        "bioPlaceholder": "Describe your relevant experience and expertise...",
+        "uploadCV": "Upload CV / Resume",
+        "uploadText": "Drag and drop your file here, or",
+        "browse": "browse",
+        "fileInfo": "PDF, DOC, DOCX (Max 5MB)",
+        "submit": "Submit Application",
+        "required": "*"
+      }
+    },
+    "bottomCTA": {
+      "title": "Have Questions?",
+      "subtitle": "Our team is available to discuss partnership opportunities, career questions, or consultancy inquiries.",
+      "email": "info@adaa-foundation.org"
+    }
+  },
   "common": {
     "readMore": "Read More",
     "learnMore": "Learn More",
