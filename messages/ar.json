@@ -155,6 +155,13 @@
       "innovation": "الابتكار الرقمي",
       "capacity": "بناء القدرات"
     },
+    "modal": {
+      "close": "إغلاق",
+      "partner": "الشريك",
+      "category": "الفئة",
+      "projectDetails": "تفاصيل المشروع",
+      "clickAnywhere": "انقر في أي مكان خارج النافذة للإغلاق"
+    },
     "projects": {
       "project1": {
         "partner": "جمعية رعاية الأسرة اليمنية (YFCA)",

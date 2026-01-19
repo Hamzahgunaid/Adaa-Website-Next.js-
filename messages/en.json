@@ -155,6 +155,13 @@
       "innovation": "Digital Innovation",
       "capacity": "Capacity Building"
     },
+    "modal": {
+      "close": "Close",
+      "partner": "Partner",
+      "category": "Category",
+      "projectDetails": "Project Details",
+      "clickAnywhere": "Click anywhere outside to close"
+    },
     "projects": {
       "project1": {
         "partner": "Yemen Family Care Association (YFCA)",

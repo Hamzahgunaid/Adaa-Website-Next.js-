@@ -44,6 +44,13 @@ export default async function WorkPage({ params }) {
       innovation: t('categories.innovation'),
       capacity: t('categories.capacity'),
     },
+    modal: {
+      close: t('modal.close'),
+      partner: t('modal.partner'),
+      category: t('modal.category'),
+      projectDetails: t('modal.projectDetails'),
+      clickAnywhere: t('modal.clickAnywhere'),
+    },
     projects: {
       project1: {
         partner: t('projects.project1.partner'),

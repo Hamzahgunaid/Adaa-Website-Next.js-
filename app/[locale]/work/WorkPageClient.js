@@ -2,9 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import ProjectModal from './ProjectModal';
 
 export default function WorkPageClient({ locale, translations, navigationTranslations }) {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Brand colors
   const colors = {
@@ -95,6 +98,17 @@ export default function WorkPageClient({ locale, translations, navigationTransla
   const filteredProjects = activeFilter === 'all'
     ? projects
     : projects.filter(p => p.category === activeFilter);
+
+  // Modal handlers
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 300); // Wait for animation
+  };
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#FAFBFC' }}>
@@ -203,7 +217,8 @@ export default function WorkPageClient({ locale, translations, navigationTransla
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                onClick={() => openModal(project)}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105"
               >
                 {/* Project Header */}
                 <div
@@ -257,6 +272,16 @@ export default function WorkPageClient({ locale, translations, navigationTransla
           </div>
         </div>
       </section>
+
+      {/* Project Detail Modal */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        translations={translations}
+        locale={locale}
+        categoryLabel={selectedProject ? categories.find(c => c.id === selectedProject.category)?.label : ''}
+      />
     </div>
   );
 }
