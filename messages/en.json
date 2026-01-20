@@ -580,6 +580,73 @@
     "error": "An error occurred",
     "success": "Success!"
   },
+  "contact": {
+    "breadcrumb": {
+      "home": "Home",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "Get in touch with our team to discuss how Adaa' Foundation can support your mission in Yemen."
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "subtitle": "Fill out the form below and we'll get back to you as soon as possible.",
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your.email@example.com",
+      "organization": "Organization",
+      "organizationPlaceholder": "Your organization name (optional)",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can we help you?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project or inquiry...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "required": "Required",
+      "success": "Thank you! Your message has been sent successfully. We'll get back to you soon.",
+      "error": "Sorry, there was an error sending your message. Please try again or contact us directly via email."
+    },
+    "info": {
+      "title": "Get in Touch",
+      "subtitle": "We're here to help",
+      "address": {
+        "label": "Address",
+        "value": "Aden, Republic of Yemen"
+      },
+      "email": {
+        "label": "Email",
+        "value": "info@adaa-foundation.org"
+      },
+      "website": {
+        "label": "Website",
+        "value": "www.adaa-foundation.org"
+      },
+      "hours": {
+        "title": "Office Hours",
+        "weekdays": "Sunday - Thursday",
+        "weekdaysHours": "8:00 AM - 4:00 PM",
+        "weekend": "Friday - Saturday",
+        "weekendHours": "Closed"
+      }
+    },
+    "reasons": {
+      "title": "Why Work With Us?",
+      "reason1": {
+        "title": "Local Expertise",
+        "description": "Yemeni-led with unparalleled contextual intelligence"
+      },
+      "reason2": {
+        "title": "Evidence-Based",
+        "description": "Data-driven decisions for measurable impact"
+      },
+      "reason3": {
+        "title": "Proven Track Record",
+        "description": "Trusted by leading organizations working in Yemen"
+      }
+    }
+  },
   "about": {
     "breadcrumb": {
       "home": "Home",

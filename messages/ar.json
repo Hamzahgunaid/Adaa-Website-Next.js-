@@ -580,6 +580,73 @@
     "error": "حدث خطأ",
     "success": "نجح!"
   },
+  "contact": {
+    "breadcrumb": {
+      "home": "الرئيسية",
+      "contact": "اتصل بنا"
+    },
+    "hero": {
+      "title": "اتصل بنا",
+      "subtitle": "تواصل مع فريقنا لمناقشة كيف يمكن لمؤسسة أداء دعم مهمتك في اليمن."
+    },
+    "form": {
+      "title": "أرسل لنا رسالة",
+      "subtitle": "املأ النموذج أدناه وسنعاود الاتصال بك في أقرب وقت ممكن.",
+      "name": "الاسم الكامل",
+      "namePlaceholder": "أدخل اسمك الكامل",
+      "email": "عنوان البريد الإلكتروني",
+      "emailPlaceholder": "your.email@example.com",
+      "organization": "المنظمة",
+      "organizationPlaceholder": "اسم منظمتك (اختياري)",
+      "subject": "الموضوع",
+      "subjectPlaceholder": "كيف يمكننا مساعدتك؟",
+      "message": "الرسالة",
+      "messagePlaceholder": "أخبرنا عن مشروعك أو استفسارك...",
+      "submit": "إرسال الرسالة",
+      "sending": "جاري الإرسال...",
+      "required": "مطلوب",
+      "success": "شكراً لك! تم إرسال رسالتك بنجاح. سنعاود الاتصال بك قريباً.",
+      "error": "عذراً، حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة عبر البريد الإلكتروني."
+    },
+    "info": {
+      "title": "تواصل معنا",
+      "subtitle": "نحن هنا للمساعدة",
+      "address": {
+        "label": "العنوان",
+        "value": "عدن، الجمهورية اليمنية"
+      },
+      "email": {
+        "label": "البريد الإلكتروني",
+        "value": "info@adaa-foundation.org"
+      },
+      "website": {
+        "label": "الموقع الإلكتروني",
+        "value": "www.adaa-foundation.org"
+      },
+      "hours": {
+        "title": "ساعات العمل",
+        "weekdays": "الأحد - الخميس",
+        "weekdaysHours": "٨:٠٠ صباحاً - ٤:٠٠ مساءً",
+        "weekend": "الجمعة - السبت",
+        "weekendHours": "مغلق"
+      }
+    },
+    "reasons": {
+      "title": "لماذا العمل معنا؟",
+      "reason1": {
+        "title": "خبرة محلية",
+        "description": "بقيادة يمنية مع ذكاء سياقي لا مثيل له"
+      },
+      "reason2": {
+        "title": "قائم على الأدلة",
+        "description": "قرارات مدفوعة بالبيانات لتأثير قابل للقياس"
+      },
+      "reason3": {
+        "title": "سجل حافل مثبت",
+        "description": "موثوق به من قبل المنظمات الرائدة العاملة في اليمن"
+      }
+    }
+  },
   "about": {
     "breadcrumb": {
       "home": "الرئيسية",
