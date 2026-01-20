@@ -16,7 +16,8 @@ export async function GET(request) {
       );
     }
 
-    const redirectUri = `${request.nextUrl.origin}/api/auth/callback`;
+    // Use the custom domain for redirect URI to match GitHub OAuth app configuration
+    const redirectUri = 'https://www.adaa-foundation.org/api/auth/callback';
     const scope = 'repo,user';
 
     const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}`;
