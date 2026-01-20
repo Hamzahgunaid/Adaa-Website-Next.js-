@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Hamzahgunaid/Adaa-Website-Next.js-
   branch: main
 
 media_folder: "public/images/uploads"
