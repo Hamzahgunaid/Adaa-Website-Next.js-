@@ -93,17 +93,34 @@ export async function GET(request) {
           provider: "github"
         };
 
-        // Send message to CMS window
-        if (window.opener) {
-          window.opener.postMessage(
-            'authorization:github:success:' + JSON.stringify(data),
-            window.location.origin
-          );
+        // Function to send message to CMS
+        function sendAuthMessage() {
+          if (window.opener) {
+            // Send the authorization message
+            window.opener.postMessage(
+              'authorization:github:success:' + JSON.stringify(data),
+              '*'
+            );
+            console.log('Auth message sent to CMS');
+          }
+        }
 
-          // Close window after short delay
+        // Listen for message from CMS window first
+        window.addEventListener('message', function(e) {
+          console.log('Received message:', e.data);
+          if (e.data === 'authorizing:github') {
+            sendAuthMessage();
+          }
+        }, false);
+
+        // Also send immediately in case CMS is already waiting
+        if (window.opener) {
+          sendAuthMessage();
+
+          // Close window after giving time for message to be received
           setTimeout(function() {
             window.close();
-          }, 1000);
+          }, 2000);
         } else {
           document.body.innerHTML = '<div class="container"><h2>Success!</h2><p>You can close this window.</p></div>';
         }
