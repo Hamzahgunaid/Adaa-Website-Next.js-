@@ -4,8 +4,43 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adaa CMS Admin</title>
+  <base href="/admin/" />
 </head>
 <body>
+  <script>
+    (function() {
+      function dispatchAuthMessage(message) {
+        if (!message) {
+          return;
+        }
+        window.postMessage(message, window.location.origin);
+      }
+
+      try {
+        const storedMessage = localStorage.getItem('decap_oauth_message');
+        if (storedMessage) {
+          dispatchAuthMessage(storedMessage);
+          localStorage.removeItem('decap_oauth_message');
+        }
+      } catch (error) {
+        console.warn('Unable to read auth message from storage:', error);
+      }
+
+      window.addEventListener('storage', function(event) {
+        if (event.key === 'decap_oauth_message' && event.newValue) {
+          dispatchAuthMessage(event.newValue);
+          localStorage.removeItem('decap_oauth_message');
+        }
+      });
+
+      if ('BroadcastChannel' in window) {
+        const channel = new BroadcastChannel('decap-oauth');
+        channel.addEventListener('message', function(event) {
+          dispatchAuthMessage(event.data);
+        });
+      }
+    })();
+  </script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
