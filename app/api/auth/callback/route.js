@@ -3,6 +3,27 @@ import { NextResponse } from 'next/server';
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const code = searchParams.get('code');
+  const state = searchParams.get('state');
+  let cmsOrigin = '';
+  if (state) {
+    try {
+      const parsedOrigin = new URL(state);
+      if (parsedOrigin.protocol === 'http:' || parsedOrigin.protocol === 'https:') {
+        cmsOrigin = parsedOrigin.origin;
+      }
+    } catch (error) {
+      try {
+        const decodedState = decodeURIComponent(state);
+        const parsedOrigin = new URL(decodedState);
+        if (parsedOrigin.protocol === 'http:' || parsedOrigin.protocol === 'https:') {
+          cmsOrigin = parsedOrigin.origin;
+        }
+      } catch (decodeError) {
+        console.warn('Invalid OAuth state origin:', decodeError);
+      }
+    }
+  }
+  const fallbackOrigin = request.nextUrl.origin;
 
   if (!code) {
     return NextResponse.json({ error: 'No authorization code provided' }, { status: 400 });
@@ -92,17 +113,22 @@ export async function GET(request) {
           token: "${data.access_token}",
           provider: "github"
         };
+        const cmsOrigin = "${cmsOrigin}";
+        const fallbackOrigin = "${fallbackOrigin}";
+        const targetOrigin = cmsOrigin || fallbackOrigin;
+        const message = "authorization:github:success:" + JSON.stringify(data);
 
         // Function to send message to CMS
         function sendAuthMessage() {
-          if (window.opener) {
-            // Send the authorization message
-            window.opener.postMessage(
-              'authorization:github:success:' + JSON.stringify(data),
-              '*'
-            );
-            console.log('Auth message sent to CMS');
+          const targets = [window.opener, window.parent].filter(Boolean);
+          if (targets.length === 0) {
+            return false;
           }
+          targets.forEach((target) => {
+            target.postMessage(message, targetOrigin);
+          });
+          console.log('Auth message sent to CMS');
+          return true;
         }
 
         // Listen for message from CMS window first
@@ -113,17 +139,24 @@ export async function GET(request) {
           }
         }, false);
 
-        // Also send immediately in case CMS is already waiting
-        if (window.opener) {
-          sendAuthMessage();
+        let attempts = 0;
+        const maxAttempts = 5;
+        const sendInterval = setInterval(function() {
+          attempts += 1;
+          const sent = sendAuthMessage();
+          if (sent || attempts >= maxAttempts) {
+            clearInterval(sendInterval);
+          }
+        }, 400);
 
-          // Close window after giving time for message to be received
-          setTimeout(function() {
+        // Close window after giving time for message to be received
+        setTimeout(function() {
+          if (window.opener || window.parent) {
             window.close();
-          }, 2000);
-        } else {
-          document.body.innerHTML = '<div class="container"><h2>Success!</h2><p>You can close this window.</p></div>';
-        }
+          } else {
+            document.body.innerHTML = '<div class="container"><h2>Success!</h2><p>You can close this window.</p></div>';
+          }
+        }, 2500);
       } catch (err) {
         console.error('Auth error:', err);
         document.body.innerHTML = '<div class="container"><h2>Error</h2><p>' + err.message + '</p></div>';
