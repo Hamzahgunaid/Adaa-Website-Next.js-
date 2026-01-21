@@ -8,5 +8,6 @@ export default createMiddleware({
 });
 
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
+  // Exclude: api routes, Next.js internals, Vercel internals, static files, and admin CMS
+  matcher: ['/((?!api|_next|_vercel|admin|.*\\..*).*)']
 };
