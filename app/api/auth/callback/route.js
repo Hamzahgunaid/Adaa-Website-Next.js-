@@ -4,19 +4,7 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const code = searchParams.get('code');
   const state = searchParams.get('state');
-  let cmsOrigin = '';
-  if (state) {
-    try {
-      const decodedState = decodeURIComponent(state);
-      const parsedOrigin = new URL(decodedState);
-      if (parsedOrigin.protocol === 'http:' || parsedOrigin.protocol === 'https:') {
-        cmsOrigin = parsedOrigin.origin;
-      }
-    } catch (error) {
-      console.warn('Invalid OAuth state origin:', error);
-    }
-  }
-  const fallbackOrigin = request.nextUrl.origin;
+  const cmsOrigin = state && state.startsWith('http') ? state : '';
 
   if (!code) {
     return NextResponse.json({ error: 'No authorization code provided' }, { status: 400 });
@@ -107,8 +95,7 @@ export async function GET(request) {
           provider: "github"
         };
         const cmsOrigin = "${cmsOrigin}";
-        const fallbackOrigin = "${fallbackOrigin}";
-        const targetOrigin = cmsOrigin || fallbackOrigin;
+        const targetOrigin = cmsOrigin || "*";
         const message = "authorization:github:success:" + JSON.stringify(data);
 
         // Function to send message to CMS
