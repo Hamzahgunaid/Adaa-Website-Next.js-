@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/:locale(en|ar)/admin/:path*",
+      "destination": "/admin/:path*"
+    }
+  ]
+}
