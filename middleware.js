@@ -15,10 +15,6 @@ export default function middleware(request) {
     return NextResponse.redirect(redirectUrl, 308);
   }
 
-  if (request.nextUrl.pathname.startsWith('/admin')) {
-    return NextResponse.next();
-  }
-
   return intlMiddleware(request);
 }
 
