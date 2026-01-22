@@ -1,8 +1,14 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/:locale(en|ar)/admin/:path*",
-      "destination": "/admin/:path*"
+      "destination": "/admin/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin/",
+      "permanent": true
     }
   ]
 }
