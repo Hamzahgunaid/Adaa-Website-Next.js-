@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "/admin/index.html"
+    },
+    {
+      "source": "/admin/",
+      "destination": "/admin/index.html"
+    },
+    {
+      "source": "/:locale(en|ar)/admin/:path*",
+      "destination": "/admin/index.html"
+    },
+    {
+      "source": "/:locale(en|ar)/api/:path*",
+      "destination": "/api/:path*"
+    }
+  ]
+}
