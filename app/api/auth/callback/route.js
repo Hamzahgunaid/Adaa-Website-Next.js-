@@ -4,26 +4,7 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const code = searchParams.get('code');
   const state = searchParams.get('state');
-  let cmsOrigin = '';
-  if (state) {
-    try {
-      const parsedOrigin = new URL(state);
-      if (parsedOrigin.protocol === 'http:' || parsedOrigin.protocol === 'https:') {
-        cmsOrigin = parsedOrigin.origin;
-      }
-    } catch (error) {
-      try {
-        const decodedState = decodeURIComponent(state);
-        const parsedOrigin = new URL(decodedState);
-        if (parsedOrigin.protocol === 'http:' || parsedOrigin.protocol === 'https:') {
-          cmsOrigin = parsedOrigin.origin;
-        }
-      } catch (decodeError) {
-        console.warn('Invalid OAuth state origin:', decodeError);
-      }
-    }
-  }
-  const fallbackOrigin = request.nextUrl.origin;
+  const cmsOrigin = state && state.startsWith('http') ? state : '';
 
   if (!code) {
     return NextResponse.json({ error: 'No authorization code provided' }, { status: 400 });
@@ -114,8 +95,7 @@ export async function GET(request) {
           provider: "github"
         };
         const cmsOrigin = "${cmsOrigin}";
-        const fallbackOrigin = "${fallbackOrigin}";
-        const targetOrigin = cmsOrigin || fallbackOrigin;
+        const targetOrigin = cmsOrigin || "*";
         const message = "authorization:github:success:" + JSON.stringify(data);
 
         // Function to send message to CMS
@@ -129,17 +109,6 @@ export async function GET(request) {
           });
           console.log('Auth message sent to CMS');
           return true;
-        }
-
-        function persistAuthMessage() {
-          try {
-            localStorage.setItem('decap_oauth_message', message);
-            const channel = new BroadcastChannel('decap-oauth');
-            channel.postMessage(message);
-            channel.close();
-          } catch (storageError) {
-            console.warn('Failed to persist auth message:', storageError);
-          }
         }
 
         // Listen for message from CMS window first
@@ -159,10 +128,6 @@ export async function GET(request) {
             clearInterval(sendInterval);
           }
         }, 400);
-
-        if (!window.opener && !window.parent) {
-          persistAuthMessage();
-        }
 
         // Close window after giving time for message to be received
         setTimeout(function() {
