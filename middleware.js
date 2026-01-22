@@ -15,14 +15,10 @@ export default function middleware(request) {
     return NextResponse.redirect(redirectUrl, 308);
   }
 
-  if (request.nextUrl.pathname.startsWith('/admin')) {
-    return NextResponse.next();
-  }
-
   return intlMiddleware(request);
 }
 
 export const config = {
-  // Exclude admin, Next.js internals, Vercel internals, and static files.
-  matcher: ['/((?!admin|_next|_vercel|.*\\..*).*)']
+  // Exclude Next.js internals, Vercel internals, and static files.
+  matcher: ['/((?!_next|_vercel|.*\\..*).*)']
 };
