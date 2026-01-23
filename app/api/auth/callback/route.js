@@ -134,9 +134,12 @@ export async function GET(request) {
             try {
               const channel = new BroadcastChannel('decap-oauth');
               channel.postMessage(message);
-              channel.close();
               console.log('Message sent via BroadcastChannel');
               sent = true;
+              // Don't close immediately - let it stay open for message delivery
+              setTimeout(function() {
+                channel.close();
+              }, 500);
             } catch (e) {
               console.error('BroadcastChannel failed:', e);
             }
@@ -175,7 +178,7 @@ export async function GET(request) {
           } else {
             document.body.innerHTML = '<div class="container"><h2>Success!</h2><p>You can close this window.</p></div>';
           }
-        }, 3000);
+        }, 4000);
       } catch (err) {
         console.error('Auth error:', err);
         document.body.innerHTML = '<div class="container"><h2>Error</h2><p>' + err.message + '</p></div>';
