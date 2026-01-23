@@ -98,17 +98,51 @@ export async function GET(request) {
         const targetOrigin = cmsOrigin || "*";
         const message = "authorization:github:success:" + JSON.stringify(data);
 
-        // Function to send message to CMS
+        // Function to send message to CMS using multiple methods
         function sendAuthMessage() {
+          let sent = false;
+
+          // Method 1: postMessage to window.opener/parent
           const targets = [window.opener, window.parent].filter(Boolean);
-          if (targets.length === 0) {
-            return false;
+          if (targets.length > 0) {
+            targets.forEach((target) => {
+              try {
+                target.postMessage(message, targetOrigin);
+                console.log('postMessage sent to CMS');
+                sent = true;
+              } catch (e) {
+                console.error('postMessage failed:', e);
+              }
+            });
           }
-          targets.forEach((target) => {
-            target.postMessage(message, targetOrigin);
-          });
-          console.log('Auth message sent to CMS');
-          return true;
+
+          // Method 2: localStorage (for same-origin communication)
+          try {
+            localStorage.setItem('decap_oauth_message', message);
+            console.log('Message stored in localStorage');
+            sent = true;
+            // Clear it after a short delay to trigger storage event
+            setTimeout(function() {
+              localStorage.removeItem('decap_oauth_message');
+            }, 100);
+          } catch (e) {
+            console.error('localStorage failed:', e);
+          }
+
+          // Method 3: BroadcastChannel (modern browsers)
+          if ('BroadcastChannel' in window) {
+            try {
+              const channel = new BroadcastChannel('decap-oauth');
+              channel.postMessage(message);
+              channel.close();
+              console.log('Message sent via BroadcastChannel');
+              sent = true;
+            } catch (e) {
+              console.error('BroadcastChannel failed:', e);
+            }
+          }
+
+          return sent;
         }
 
         // Listen for message from CMS window first
@@ -119,13 +153,18 @@ export async function GET(request) {
           }
         }, false);
 
+        // Send immediately on load
+        sendAuthMessage();
+
+        // Retry sending with interval
         let attempts = 0;
         const maxAttempts = 5;
         const sendInterval = setInterval(function() {
           attempts += 1;
           const sent = sendAuthMessage();
-          if (sent || attempts >= maxAttempts) {
+          if (attempts >= maxAttempts) {
             clearInterval(sendInterval);
+            console.log('Completed ' + attempts + ' send attempts');
           }
         }, 400);
 
@@ -136,7 +175,7 @@ export async function GET(request) {
           } else {
             document.body.innerHTML = '<div class="container"><h2>Success!</h2><p>You can close this window.</p></div>';
           }
-        }, 2500);
+        }, 3000);
       } catch (err) {
         console.error('Auth error:', err);
         document.body.innerHTML = '<div class="container"><h2>Error</h2><p>' + err.message + '</p></div>';
