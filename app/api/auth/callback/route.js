@@ -98,78 +98,55 @@ export async function GET(request) {
         const targetOrigin = cmsOrigin || "*";
         const message = "authorization:github:success:" + JSON.stringify(data);
 
-        // Function to send message to CMS using multiple methods
-        function sendAuthMessage() {
-          let sent = false;
-
-          // Method 1: postMessage to window.opener/parent
-          const targets = [window.opener, window.parent].filter(Boolean);
-          if (targets.length > 0) {
-            targets.forEach((target) => {
-              try {
-                target.postMessage(message, targetOrigin);
-                console.log('postMessage sent to CMS');
-                sent = true;
-              } catch (e) {
-                console.error('postMessage failed:', e);
-              }
-            });
-          }
-
-          // Method 2: localStorage (for same-origin communication)
-          try {
-            localStorage.setItem('decap_oauth_message', message);
-            console.log('Message stored in localStorage');
-            sent = true;
-            // Clear it after a short delay to trigger storage event
-            setTimeout(function() {
-              localStorage.removeItem('decap_oauth_message');
-            }, 100);
-          } catch (e) {
-            console.error('localStorage failed:', e);
-          }
-
-          // Method 3: BroadcastChannel (modern browsers)
-          if ('BroadcastChannel' in window) {
-            try {
-              const channel = new BroadcastChannel('decap-oauth');
-              channel.postMessage(message);
-              console.log('Message sent via BroadcastChannel');
-              sent = true;
-              // Don't close immediately - let it stay open for message delivery
-              setTimeout(function() {
-                channel.close();
-              }, 500);
-            } catch (e) {
-              console.error('BroadcastChannel failed:', e);
-            }
-          }
-
-          return sent;
+        // Store in localStorage immediately (backup method for Decap CMS)
+        try {
+          localStorage.setItem('decap_oauth_message', message);
+          console.log('Message stored in localStorage for Decap CMS');
+        } catch (e) {
+          console.error('localStorage failed:', e);
         }
 
-        // Listen for message from CMS window first
+        // Function to send postMessage to CMS
+        function sendPostMessage() {
+          const targets = [window.opener, window.parent].filter(Boolean);
+          if (targets.length === 0) {
+            console.warn('No window.opener or window.parent available');
+            return false;
+          }
+
+          targets.forEach((target) => {
+            try {
+              target.postMessage(message, targetOrigin);
+              console.log('postMessage sent to CMS');
+            } catch (e) {
+              console.error('postMessage failed:', e);
+            }
+          });
+          return true;
+        }
+
+        // Listen for message from CMS window
         window.addEventListener('message', function(e) {
-          console.log('Received message:', e.data);
           if (e.data === 'authorizing:github') {
-            sendAuthMessage();
+            console.log('Received authorizing request from CMS');
+            sendPostMessage();
           }
         }, false);
 
-        // Send immediately on load
-        sendAuthMessage();
+        // Send postMessage immediately
+        sendPostMessage();
 
-        // Retry sending with interval
-        let attempts = 0;
+        // Retry sending postMessage with interval (ensures delivery)
+        let attempts = 1;
         const maxAttempts = 5;
         const sendInterval = setInterval(function() {
-          attempts += 1;
-          const sent = sendAuthMessage();
+          attempts++;
+          sendPostMessage();
           if (attempts >= maxAttempts) {
             clearInterval(sendInterval);
-            console.log('Completed ' + attempts + ' send attempts');
+            console.log('Completed ' + maxAttempts + ' postMessage attempts');
           }
-        }, 400);
+        }, 500);
 
         // Close window after giving time for message to be received
         setTimeout(function() {
