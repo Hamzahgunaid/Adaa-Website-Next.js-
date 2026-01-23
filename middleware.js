@@ -19,6 +19,6 @@ export default function middleware(request) {
 }
 
 export const config = {
-  // Exclude Next.js internals, Vercel internals, and static files.
-  matcher: ['/((?!_next|_vercel|.*\\..*).*)']
+  // Exclude: API routes, admin CMS, Next.js internals, Vercel internals, and static files
+  matcher: ['/((?!api|admin|_next|_vercel|.*\\..*).*)']
 };
