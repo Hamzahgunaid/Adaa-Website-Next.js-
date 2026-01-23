@@ -10,22 +10,32 @@
 <body>
   <script>
     (function() {
-      console.log('[Decap OAuth] Checking for stored OAuth message...');
+      console.log('[Decap OAuth] Initializing...');
 
-      // Only check localStorage on page load - Decap CMS handles the rest
+      // Clear any stale OAuth messages from previous attempts
       try {
-        const storedMessage = localStorage.getItem('decap_oauth_message');
-        if (storedMessage) {
-          console.log('[Decap OAuth] Found stored message, will be processed by Decap CMS');
-          // Don't remove it - let Decap CMS handle it
-        } else {
-          console.log('[Decap OAuth] No stored message found');
+        const oldMessage = localStorage.getItem('decap_oauth_message');
+        if (oldMessage) {
+          console.log('[Decap OAuth] Clearing stale message from localStorage');
+          localStorage.removeItem('decap_oauth_message');
         }
-      } catch (error) {
-        console.warn('[Decap OAuth] Unable to check localStorage:', error);
+      } catch (e) {
+        console.warn('[Decap OAuth] Could not clear localStorage:', e);
       }
 
-      console.log('[Decap OAuth] Initialization complete - Decap CMS will handle OAuth messages');
+      // Add debug listener to see if Decap CMS receives postMessage
+      window.addEventListener('message', function(event) {
+        if (event.data && typeof event.data === 'string') {
+          if (event.data.includes('authorization:github')) {
+            console.log('[Decap OAuth] ✅ Received OAuth message from popup!');
+            console.log('[Decap OAuth] Message:', event.data.substring(0, 150) + '...');
+            console.log('[Decap OAuth] Origin:', event.origin);
+            console.log('[Decap OAuth] Source:', event.source ? 'popup window' : 'unknown');
+          }
+        }
+      }, true); // Use capture phase to log before Decap CMS processes
+
+      console.log('[Decap OAuth] Ready - waiting for OAuth messages');
     })();
   </script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
