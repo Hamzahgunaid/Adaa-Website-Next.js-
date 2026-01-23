@@ -10,36 +10,57 @@
 <body>
   <script>
     (function() {
+      console.log('[Decap OAuth] Initializing auth message listeners...');
+
       function dispatchAuthMessage(message) {
         if (!message) {
           return;
         }
+        console.log('[Decap OAuth] Dispatching auth message:', message.substring(0, 100) + '...');
         window.dispatchEvent(new MessageEvent('message', { data: message }));
       }
 
+      // Check localStorage on page load
       try {
         const storedMessage = localStorage.getItem('decap_oauth_message');
         if (storedMessage) {
+          console.log('[Decap OAuth] Found message in localStorage on load');
           dispatchAuthMessage(storedMessage);
           localStorage.removeItem('decap_oauth_message');
         }
       } catch (error) {
-        console.warn('Unable to read auth message from storage:', error);
+        console.warn('[Decap OAuth] Unable to read auth message from storage:', error);
       }
 
+      // Listen for storage events (from popup window)
       window.addEventListener('storage', function(event) {
+        console.log('[Decap OAuth] Storage event:', event.key, event.newValue ? 'has value' : 'no value');
         if (event.key === 'decap_oauth_message' && event.newValue) {
+          console.log('[Decap OAuth] Received message via storage event');
           dispatchAuthMessage(event.newValue);
           localStorage.removeItem('decap_oauth_message');
         }
       });
 
+      // Listen for BroadcastChannel messages
       if ('BroadcastChannel' in window) {
         const channel = new BroadcastChannel('decap-oauth');
+        console.log('[Decap OAuth] BroadcastChannel listener ready');
         channel.addEventListener('message', function(event) {
+          console.log('[Decap OAuth] Received message via BroadcastChannel');
           dispatchAuthMessage(event.data);
         });
+      } else {
+        console.log('[Decap OAuth] BroadcastChannel not supported');
       }
+
+      // Listen for direct postMessage
+      window.addEventListener('message', function(event) {
+        if (event.data && typeof event.data === 'string' && event.data.startsWith('authorization:github')) {
+          console.log('[Decap OAuth] Received message via postMessage');
+          dispatchAuthMessage(event.data);
+        }
+      });
     })();
   </script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
