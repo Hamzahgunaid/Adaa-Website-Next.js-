@@ -56,9 +56,11 @@
 
       // Listen for direct postMessage
       window.addEventListener('message', function(event) {
-        if (event.data && typeof event.data === 'string' && event.data.startsWith('authorization:github')) {
-          console.log('[Decap OAuth] Received message via postMessage');
-          dispatchAuthMessage(event.data);
+        // Only process messages from external windows (popup), not our own dispatches
+        if (event.source && event.data && typeof event.data === 'string' && event.data.startsWith('authorization:github')) {
+          console.log('[Decap OAuth] Received message via postMessage from external source');
+          // Don't call dispatchAuthMessage - this IS already a window message event
+          // Decap CMS will receive it directly
         }
       });
     })();
