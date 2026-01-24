@@ -97,6 +97,9 @@ export async function GET(request) {
         const cmsOrigin = "${cmsOrigin}";
         const targetOrigin = cmsOrigin || "*";
 
+        // IMPORTANT: Decap CMS external OAuth expects STRING format, not object
+        const message = "authorization:github:success:" + JSON.stringify(data);
+
         // Function to send postMessage to CMS
         function sendPostMessage() {
           const targets = [window.opener, window.parent].filter(Boolean);
@@ -107,9 +110,8 @@ export async function GET(request) {
 
           targets.forEach((target) => {
             try {
-              // Send as object, not string - Decap CMS expects this format
-              target.postMessage(data, targetOrigin);
-              console.log('postMessage sent to CMS with token:', data.token.substring(0, 15) + '...');
+              target.postMessage(message, targetOrigin);
+              console.log('postMessage sent to CMS (string format):', message.substring(0, 60) + '...');
             } catch (e) {
               console.error('postMessage failed:', e);
             }
