@@ -96,15 +96,6 @@ export async function GET(request) {
         };
         const cmsOrigin = "${cmsOrigin}";
         const targetOrigin = cmsOrigin || "*";
-        const message = "authorization:github:success:" + JSON.stringify(data);
-
-        // Store in localStorage immediately (backup method for Decap CMS)
-        try {
-          localStorage.setItem('decap_oauth_message', message);
-          console.log('Message stored in localStorage for Decap CMS');
-        } catch (e) {
-          console.error('localStorage failed:', e);
-        }
 
         // Function to send postMessage to CMS
         function sendPostMessage() {
@@ -116,8 +107,9 @@ export async function GET(request) {
 
           targets.forEach((target) => {
             try {
-              target.postMessage(message, targetOrigin);
-              console.log('postMessage sent to CMS');
+              // Send as object, not string - Decap CMS expects this format
+              target.postMessage(data, targetOrigin);
+              console.log('postMessage sent to CMS with token:', data.token.substring(0, 15) + '...');
             } catch (e) {
               console.error('postMessage failed:', e);
             }
