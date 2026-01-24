@@ -25,13 +25,18 @@
 
       // Add debug listener to see if Decap CMS receives postMessage
       window.addEventListener('message', function(event) {
-        if (event.data && typeof event.data === 'string') {
-          if (event.data.includes('authorization:github')) {
-            console.log('[Decap OAuth] ✅ Received OAuth message from popup!');
-            console.log('[Decap OAuth] Message:', event.data.substring(0, 150) + '...');
-            console.log('[Decap OAuth] Origin:', event.origin);
-            console.log('[Decap OAuth] Source:', event.source ? 'popup window' : 'unknown');
-          }
+        // Check for object format (new approach)
+        if (event.data && typeof event.data === 'object' && event.data.provider === 'github' && event.data.token) {
+          console.log('[Decap OAuth] ✅ Received OAuth message from popup (object format)!');
+          console.log('[Decap OAuth] Provider:', event.data.provider);
+          console.log('[Decap OAuth] Token:', event.data.token.substring(0, 15) + '...');
+          console.log('[Decap OAuth] Origin:', event.origin);
+          console.log('[Decap OAuth] Source:', event.source ? 'popup window' : 'unknown');
+        }
+        // Check for string format (old approach - for debugging)
+        else if (event.data && typeof event.data === 'string' && event.data.includes('authorization:github')) {
+          console.log('[Decap OAuth] ⚠️ Received OAuth message in STRING format (should be object)');
+          console.log('[Decap OAuth] Message:', event.data.substring(0, 150) + '...');
         }
       }, true); // Use capture phase to log before Decap CMS processes
 
