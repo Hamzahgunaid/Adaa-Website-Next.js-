@@ -89,70 +89,25 @@ export async function GET(request) {
   </div>
   <script>
     (function() {
-      try {
-        const data = {
-          token: "${data.access_token}",
-          provider: "github"
-        };
-        const cmsOrigin = "${cmsOrigin}";
-        const targetOrigin = cmsOrigin || "*";
+      function receiveMessage(e) {
+        console.log("received message:", e);
+        window.opener.postMessage(
+          'authorization:github:success:' + JSON.stringify({
+            token: "${data.access_token}",
+            provider: "github"
+          }),
+          e.origin
+        );
+      }
 
-        // IMPORTANT: Decap CMS external OAuth expects STRING format, not object
-        const message = "authorization:github:success:" + JSON.stringify(data);
+      window.addEventListener("message", receiveMessage, false);
 
-        // Function to send postMessage to CMS
-        function sendPostMessage() {
-          const targets = [window.opener, window.parent].filter(Boolean);
-          if (targets.length === 0) {
-            console.warn('No window.opener or window.parent available');
-            return false;
-          }
-
-          targets.forEach((target) => {
-            try {
-              target.postMessage(message, targetOrigin);
-              console.log('postMessage sent to CMS (string format):', message.substring(0, 60) + '...');
-            } catch (e) {
-              console.error('postMessage failed:', e);
-            }
-          });
-          return true;
-        }
-
-        // Listen for message from CMS window
-        window.addEventListener('message', function(e) {
-          if (e.data === 'authorizing:github') {
-            console.log('Received authorizing request from CMS');
-            sendPostMessage();
-          }
-        }, false);
-
-        // Send postMessage immediately
-        sendPostMessage();
-
-        // Retry sending postMessage with interval (ensures delivery)
-        let attempts = 1;
-        const maxAttempts = 5;
-        const sendInterval = setInterval(function() {
-          attempts++;
-          sendPostMessage();
-          if (attempts >= maxAttempts) {
-            clearInterval(sendInterval);
-            console.log('Completed ' + maxAttempts + ' postMessage attempts');
-          }
-        }, 500);
-
-        // Close window after giving time for message to be received
-        setTimeout(function() {
-          if (window.opener || window.parent) {
-            window.close();
-          } else {
-            document.body.innerHTML = '<div class="container"><h2>Success!</h2><p>You can close this window.</p></div>';
-          }
-        }, 4000);
-      } catch (err) {
-        console.error('Auth error:', err);
-        document.body.innerHTML = '<div class="container"><h2>Error</h2><p>' + err.message + '</p></div>';
+      // Send message to opener
+      if (window.opener) {
+        window.opener.postMessage(
+          "authorizing:github",
+          "*"
+        );
       }
     })();
   </script>
