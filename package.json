@@ -9,18 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.2.18",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "next-intl": "^3.22.0",
     "decap-cms-app": "^3.3.3",
-    "netlify-cms-app": "^2.15.72",
     "gray-matter": "^4.0.3",
+    "lucide-react": "^0.460.0",
     "marked": "^12.0.2",
+    "netlify-cms-app": "^2.15.72",
+    "next": "14.2.18",
+    "next-intl": "^3.22.0",
     "nodemailer": "^6.9.15",
-    "lucide-react": "^0.460.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.15.5",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "eslint-config-next": "14.2.18",
