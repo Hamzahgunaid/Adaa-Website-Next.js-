@@ -17,11 +17,7 @@ export default function middleware(request) {
     return NextResponse.redirect(redirectUrl, 308);
   }
 
-  // Handle root path explicitly
-  if (request.nextUrl.pathname === '/') {
-    return NextResponse.redirect(new URL('/en', request.url));
-  }
-
+  // Let intlMiddleware handle all routing including root path
   return intlMiddleware(request);
 }
 
