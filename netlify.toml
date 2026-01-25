@@ -7,16 +7,3 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-# Redirect non-www to www
-[[redirects]]
-  from = "http://adaa-foundation.org/*"
-  to = "https://www.adaa-foundation.org/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://adaa-foundation.org/*"
-  to = "https://www.adaa-foundation.org/:splat"
-  status = 301
-  force = true
