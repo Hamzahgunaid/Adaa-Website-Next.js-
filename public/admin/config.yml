@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Hamzahgunaid/Adaa-Website-Next.js-
   branch: main
+  # Using GitHub backend directly - works on Netlify without custom OAuth
+  # Users authenticate with their GitHub accounts
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
