@@ -89,25 +89,34 @@ export async function GET(request) {
   </div>
   <script>
     (function() {
-      function receiveMessage(e) {
-        console.log("received message:", e);
-        window.opener.postMessage(
-          'authorization:github:success:' + JSON.stringify({
-            token: "${data.access_token}",
-            provider: "github"
-          }),
-          e.origin
-        );
-      }
+      const data = {
+        token: "${data.access_token}",
+        provider: "github"
+      };
 
-      window.addEventListener("message", receiveMessage, false);
+      // Listen for the handshake from CMS
+      window.addEventListener("message", function(event) {
+        console.log("Received message from CMS:", event.data);
 
-      // Send message to opener
+        if (event.data === "authorizing:github") {
+          // CMS is ready, send the token
+          const message = "authorization:github:success:" + JSON.stringify(data);
+          console.log("Sending token to CMS");
+
+          event.source.postMessage(message, event.origin);
+
+          // Close window after sending
+          setTimeout(function() {
+            window.close();
+          }, 1000);
+        }
+      }, false);
+
+      // Also try sending directly (for older CMS versions)
       if (window.opener) {
-        window.opener.postMessage(
-          "authorizing:github",
-          "*"
-        );
+        const message = "authorization:github:success:" + JSON.stringify(data);
+        window.opener.postMessage(message, "*");
+        console.log("Sent token directly to opener");
       }
     })();
   </script>
