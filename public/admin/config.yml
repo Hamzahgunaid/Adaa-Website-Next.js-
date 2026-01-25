@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Hamzahgunaid/Adaa-Website-Next.js-
   branch: main
+  base_url: https://www.adaa-foundation.org
+  auth_endpoint: api/auth
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
