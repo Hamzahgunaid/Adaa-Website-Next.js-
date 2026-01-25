@@ -93,31 +93,97 @@ export async function GET(request) {
         token: "${data.access_token}",
         provider: "github"
       };
+      const message = "authorization:github:success:" + JSON.stringify(data);
 
-      // Listen for the handshake from CMS
+      console.log("Callback loaded, sending token...");
+
+      // Try multiple methods to send the token
+      function sendToken() {
+        // Method 1: Direct to opener
+        if (window.opener) {
+          try {
+            window.opener.postMessage(message, "*");
+            console.log("✓ Sent to opener with wildcard origin");
+          } catch (e) {
+            console.error("✗ Failed to send to opener:", e);
+          }
+
+          // Also try with specific origin
+          try {
+            const openerOrigin = window.opener.location.origin;
+            window.opener.postMessage(message, openerOrigin);
+            console.log("✓ Sent to opener with specific origin:", openerOrigin);
+          } catch (e) {
+            console.log("✗ Could not access opener origin (cross-origin)");
+          }
+        }
+
+        // Method 2: To parent
+        if (window.parent && window.parent !== window) {
+          try {
+            window.parent.postMessage(message, "*");
+            console.log("✓ Sent to parent");
+          } catch (e) {
+            console.error("✗ Failed to send to parent:", e);
+          }
+        }
+
+        // Method 3: Broadcast to all windows
+        try {
+          window.postMessage(message, "*");
+          console.log("✓ Broadcasted to own window");
+        } catch (e) {
+          console.error("✗ Failed to broadcast:", e);
+        }
+      }
+
+      // Send immediately
+      sendToken();
+
+      // Listen for CMS handshake and respond
       window.addEventListener("message", function(event) {
-        console.log("Received message from CMS:", event.data);
+        console.log("Received message:", event.data);
 
-        if (event.data === "authorizing:github") {
-          // CMS is ready, send the token
-          const message = "authorization:github:success:" + JSON.stringify(data);
-          console.log("Sending token to CMS");
-
-          event.source.postMessage(message, event.origin);
-
-          // Close window after sending
-          setTimeout(function() {
-            window.close();
-          }, 1000);
+        if (event.data === "authorizing:github" ||
+            event.data === "authorizing" ||
+            typeof event.data === 'string' && event.data.includes('authorizing')) {
+          console.log("✓ CMS handshake received, responding...");
+          if (event.source) {
+            event.source.postMessage(message, event.origin);
+            console.log("✓ Responded to handshake");
+          }
         }
       }, false);
 
-      // Also try sending directly (for older CMS versions)
-      if (window.opener) {
-        const message = "authorization:github:success:" + JSON.stringify(data);
-        window.opener.postMessage(message, "*");
-        console.log("Sent token directly to opener");
-      }
+      // Retry sending every 500ms for 3 seconds
+      let attempts = 0;
+      const maxAttempts = 6;
+      const interval = setInterval(function() {
+        attempts++;
+        console.log("Retry attempt", attempts);
+        sendToken();
+
+        if (attempts >= maxAttempts) {
+          clearInterval(interval);
+          console.log("Max attempts reached");
+        }
+      }, 500);
+
+      // Close window after 4 seconds
+      setTimeout(function() {
+        console.log("Attempting to close window...");
+        if (window.opener || window.parent) {
+          try {
+            window.close();
+            console.log("✓ Window closed");
+          } catch (e) {
+            console.log("✗ Could not close window:", e);
+            document.body.innerHTML = '<div class="container"><h2>Success!</h2><p>Authentication complete. You can close this window.</p></div>';
+          }
+        } else {
+          document.body.innerHTML = '<div class="container"><h2>Success!</h2><p>Authentication complete. You can close this window.</p></div>';
+        }
+      }, 4000);
     })();
   </script>
 </body>
