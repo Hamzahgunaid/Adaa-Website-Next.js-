@@ -160,7 +160,7 @@ export default async function ServicesPage({ params }) {
           </svg>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-8 py-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-white/60 text-sm mb-6 rtl:flex-row-reverse">
             <Link href={`/${locale}`} className="hover:text-white transition-colors">{t('breadcrumb.home')}</Link>
@@ -175,7 +175,7 @@ export default async function ServicesPage({ params }) {
 
       {/* ===== INTRODUCTION SECTION ===== */}
       <section className="py-16 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-lg text-gray-700 leading-relaxed">
               {t('intro.description')}
@@ -186,7 +186,7 @@ export default async function ServicesPage({ params }) {
 
       {/* ===== SERVICES OVERVIEW - QUICK NAVIGATION ===== */}
       <section className="py-12 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {services.map((service, i) => (
               <a
@@ -228,7 +228,7 @@ export default async function ServicesPage({ params }) {
           className={`py-20`}
           style={{ backgroundColor: index % 2 === 0 ? 'white' : '#FAFBFC' }}
         >
-          <div className="max-w-7xl mx-auto px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-12 gap-12 items-start">
               {/* Left Column - Main Info */}
               <div className="col-span-12 lg:col-span-5">
@@ -321,7 +321,7 @@ export default async function ServicesPage({ params }) {
 
       {/* ===== CROSS-SERVICE VALUE PROPOSITION ===== */}
       <section className="py-20" style={{ backgroundColor: colors.primaryNavy }}>
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span
               className="text-sm font-semibold tracking-wider uppercase"
@@ -403,7 +403,7 @@ export default async function ServicesPage({ params }) {
 
       {/* ===== CTA SECTION ===== */}
       <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-8 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             className="text-3xl font-bold mb-4"
             style={{ color: colors.primaryNavy }}
