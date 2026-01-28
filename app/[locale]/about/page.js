@@ -135,7 +135,7 @@ export default async function AboutPage({ params }) {
           </svg>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-8 py-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-white/60 text-sm mb-6 rtl:flex-row-reverse">
             <Link href={`/${locale}`} className="hover:text-white transition-colors">{t('breadcrumb.home')}</Link>
@@ -150,7 +150,7 @@ export default async function AboutPage({ params }) {
 
       {/* ===== MAIN ABOUT CONTENT ===== */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-12 gap-16">
             <div className="col-span-12 lg:col-span-7">
               <div className="prose prose-lg max-w-none">
@@ -195,7 +195,7 @@ export default async function AboutPage({ params }) {
 
       {/* ===== VISION & MISSION ===== */}
       <section className="py-20 border-t border-gray-100" style={{ backgroundColor: '#FAFBFC' }}>
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Vision */}
             <div className="rounded-xl p-10 relative overflow-hidden" style={{ backgroundColor: colors.primaryNavy }}>
@@ -232,7 +232,7 @@ export default async function AboutPage({ params }) {
 
       {/* ===== OUR VALUES ===== */}
       <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: colors.secondaryTeal }}>
               {t('values.title')}
@@ -267,7 +267,7 @@ export default async function AboutPage({ params }) {
 
       {/* ===== LEADERSHIP TEAM ===== */}
       <section className="py-20 border-t border-gray-100" style={{ backgroundColor: '#FAFBFC' }}>
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-end justify-between mb-12">
             <div>
               <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: colors.secondaryTeal }}>
@@ -312,7 +312,7 @@ export default async function AboutPage({ params }) {
 
       {/* ===== WHO WE WORK WITH ===== */}
       <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: colors.secondaryTeal }}>
               {t('partners.title')}
@@ -366,7 +366,7 @@ export default async function AboutPage({ params }) {
 
       {/* ===== CTA SECTION ===== */}
       <section className="py-20" style={{ backgroundColor: colors.primaryNavy }}>
-        <div className="max-w-3xl mx-auto px-8 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">{t('cta.title')}</h2>
           <p className="text-lg text-white/70 mb-8">{t('cta.subtitle')}</p>
           <div className="flex flex-wrap items-center justify-center gap-4">

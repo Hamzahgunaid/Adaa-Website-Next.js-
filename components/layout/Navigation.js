@@ -35,13 +35,13 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo with Tagline */}
-          <Link href={`/${locale}`} className="flex items-center gap-3 rtl:gap-3">
+          <Link href={`/${locale}`} className="flex items-center gap-3 rtl:gap-3 min-w-0">
             <AdaaLogoIcon size={48} />
-            <div className="border-l border-gray-200 pl-3 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-3">
-              <span className="text-xl font-bold tracking-tight text-[#1E3A5F]">
+            <div className="border-l border-gray-200 pl-3 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-3 min-w-0">
+              <span className="block text-base sm:text-xl font-bold tracking-tight text-[#1E3A5F] leading-tight">
                 {locale === 'ar' ? "أداء للاستشارات" : "Adaa' Consulting"}
               </span>
-              <span className="block text-xs text-gray-500 tracking-wide">
+              <span className="hidden sm:block text-xs text-gray-500 tracking-wide">
                 {locale === 'ar' ? "قيادة التأثير بالأدلة والابتكار" : "Driving Impact with Evidence and Innovation"}
               </span>
             </div>

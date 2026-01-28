@@ -132,25 +132,25 @@ export default async function HomePage({ params }) {
     <div className="min-h-screen bg-white">
       {/* ===== HERO SECTION ===== */}
       <section className="relative overflow-hidden" style={{ backgroundColor: '#FAFBFC' }}>
-        <div className="max-w-7xl mx-auto px-8 py-20">
-          <div className="grid grid-cols-12 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <div className="grid grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Content - 7 columns */}
             <div className="col-span-12 lg:col-span-7">
               <span
-                className="inline-block px-3 py-1 text-sm font-medium rounded-full mb-6"
+                className="inline-block px-3 py-1 text-xs sm:text-sm font-medium rounded-full mb-5 sm:mb-6"
                 style={{ backgroundColor: `${colors.secondaryTeal}15`, color: colors.secondaryTeal }}
               >
                 {t('hero.tag')}
               </span>
 
               <h1
-                className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6"
+                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 sm:mb-6"
                 style={{ color: colors.primaryNavy }}
               >
                 {t('hero.title')}
               </h1>
 
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-xl">
                 {t('hero.subtitle')}
               </p>
 
@@ -254,7 +254,7 @@ export default async function HomePage({ params }) {
 
       {/* ===== STATS BAR ===== */}
       <section className="border-y border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200 rtl:divide-x-reverse">
             {[
               { number: t('stats.years'), label: t('stats.yearsLabel'), color: colors.secondaryTeal },
@@ -275,7 +275,7 @@ export default async function HomePage({ params }) {
 
       {/* ===== SERVICES SECTION ===== */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: colors.secondaryTeal }}>
               {t('services.subtitle')}
@@ -319,7 +319,7 @@ export default async function HomePage({ params }) {
 
       {/* ===== WHY ADAA SECTION ===== */}
       <section className="py-20" style={{ backgroundColor: '#FAFBFC' }}>
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: colors.secondaryTeal }}>
               {t('values.subtitle')}
@@ -353,7 +353,7 @@ export default async function HomePage({ params }) {
 
       {/* ===== LATEST INSIGHTS SECTION ===== */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-end justify-between mb-12">
             <div>
               <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: colors.secondaryTeal }}>
@@ -436,7 +436,7 @@ export default async function HomePage({ params }) {
 
       {/* ===== TRUSTED BY SECTION ===== */}
       <section className="py-16 border-y border-gray-200" style={{ backgroundColor: '#FAFBFC' }}>
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h3 className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-2">
               {t('trustedBy.title')}
@@ -473,7 +473,7 @@ export default async function HomePage({ params }) {
 
       {/* ===== CTA SECTION ===== */}
       <section className="py-20" style={{ backgroundColor: colors.primaryNavy }}>
-        <div className="max-w-3xl mx-auto px-8 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             {t('cta.title')}
           </h2>
