@@ -4,7 +4,8 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const code = searchParams.get('code');
   const state = searchParams.get('state');
-  const cmsOrigin = state && state.startsWith('http') ? state : '';
+  const decodedState = state ? decodeURIComponent(state) : '';
+  const cmsOrigin = decodedState && decodedState.startsWith('http') ? decodedState : '';
 
   if (!code) {
     return NextResponse.json({ error: 'No authorization code provided' }, { status: 400 });
@@ -102,7 +103,7 @@ export async function GET(request) {
         // Method 1: Direct to opener
         if (window.opener) {
           try {
-            window.opener.postMessage(message, "*");
+            window.opener.postMessage(message, "${cmsOrigin || '*'}");
             console.log("✓ Sent to opener with wildcard origin");
           } catch (e) {
             console.error("✗ Failed to send to opener:", e);
@@ -110,7 +111,7 @@ export async function GET(request) {
 
           // Also try with specific origin
           try {
-            const openerOrigin = window.opener.location.origin;
+            const openerOrigin = "${cmsOrigin}" || window.opener.location.origin;
             window.opener.postMessage(message, openerOrigin);
             console.log("✓ Sent to opener with specific origin:", openerOrigin);
           } catch (e) {
@@ -121,7 +122,7 @@ export async function GET(request) {
         // Method 2: To parent
         if (window.parent && window.parent !== window) {
           try {
-            window.parent.postMessage(message, "*");
+            window.parent.postMessage(message, "${cmsOrigin || '*'}");
             console.log("✓ Sent to parent");
           } catch (e) {
             console.error("✗ Failed to send to parent:", e);
@@ -130,7 +131,7 @@ export async function GET(request) {
 
         // Method 3: Broadcast to all windows
         try {
-          window.postMessage(message, "*");
+          window.postMessage(message, "${cmsOrigin || '*'}");
           console.log("✓ Broadcasted to own window");
         } catch (e) {
           console.error("✗ Failed to broadcast:", e);
@@ -149,7 +150,8 @@ export async function GET(request) {
             typeof event.data === 'string' && event.data.includes('authorizing')) {
           console.log("✓ CMS handshake received, responding...");
           if (event.source) {
-            event.source.postMessage(message, event.origin);
+            const targetOrigin = "${cmsOrigin}" || event.origin;
+            event.source.postMessage(message, targetOrigin);
             console.log("✓ Responded to handshake");
           }
         }
@@ -181,7 +183,11 @@ export async function GET(request) {
             document.body.innerHTML = '<div class="container"><h2>Success!</h2><p>Authentication complete. You can close this window.</p></div>';
           }
         } else {
-          document.body.innerHTML = '<div class="container"><h2>Success!</h2><p>Authentication complete. You can close this window.</p></div>';
+          if ("${cmsOrigin}") {
+            window.location.href = "${cmsOrigin}/admin/";
+          } else {
+            document.body.innerHTML = '<div class="container"><h2>Success!</h2><p>Authentication complete. You can close this window.</p></div>';
+          }
         }
       }, 4000);
     })();
