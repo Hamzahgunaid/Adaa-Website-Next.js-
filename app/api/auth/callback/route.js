@@ -4,7 +4,8 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const code = searchParams.get('code');
   const state = searchParams.get('state');
-  const cmsOrigin = state && state.startsWith('http') ? state : '';
+  const decodedState = state ? decodeURIComponent(state) : '';
+  const cmsOrigin = decodedState && decodedState.startsWith('http') ? decodedState : '';
 
   if (!code) {
     return NextResponse.json({ error: 'No authorization code provided' }, { status: 400 });
